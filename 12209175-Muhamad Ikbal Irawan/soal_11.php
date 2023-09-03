@@ -14,20 +14,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Soal-11</title>
+    <style>
+        body{
+            margin-bottom: 33%;
+            background-image: linear-gradient(45deg, orange, yellow);
+        }
+        .content{
+            border-radius: 50px;
+            justify-content: center;
+            border-style: double;
+            margin: 0px 25% 0px;
+            padding: 10px 0px 20px 0px;
+        }
+    </style>
 </head>
 <body>
     <!-- Siapkan Input -->
-    <div class="container my-5">
-        <div class="card" >
-            <div class="card-body border border-primary">
-                <h1 class="text-center mt-1 text-primary">Kode Pegawai</h1>
-                <form action="" method="post">
-                    <div class="input-group mt-3 mb-4">
-                        <input type="number" name="no_pegawai" class="form-control" placeholder="Masukkan No Pegawai (Wajib 11 Angka!)" aria-label="Masukkan No Pegawai (Wajib 11 Angka!)" aria-describedby="button-addon2">
-                        <button class="btn btn-primary" type="submit" name="submit" id="button-addon2">Kirim!</button>
+                <h1><center>No pegawai</center></h1>
+                <form action="" method="post" >
+                <div class="content">
+                    <div style="display: flex; justify-content: center;">
+                        <label for="no_pegawai">Masukan No Pegawai </label>
+                        <input type="number" name="no_pegawai" id="no_pegawai">
+                        <button type="submit" name="submit" id="button-addon2" style= "justify-content: center;">Kirim!
+                    </button>                    
                     </div>
+
+                </div>
                 </form>
             </div>
         </div>
@@ -40,8 +54,8 @@
     // Cek apakah button dgn name submit di klik
     if (isset($_POST['submit'])) {
         $no_pegawai = $_POST['no_pegawai'];
-        
-        $no_pegawai = strval($no_pegawai);
+
+            $no_pegawai = strval($no_pegawai);
 
         if ($no_pegawai < 11) {
             echo "No Pegawai Tidak Sesuai";
