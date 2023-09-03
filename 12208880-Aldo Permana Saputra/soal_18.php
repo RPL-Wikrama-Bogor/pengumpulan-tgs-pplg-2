@@ -7,6 +7,7 @@ session_start();
 if (!isset($_SESSION['data_siswa'])) {
     $_SESSION['data_siswa'] = [];
 }
+//aldo
 
 // Fungsi untuk menambahkan data siswa ke dalam session
 function tambahDataSiswa($nama, $mtk, $indo, $ingg, $dpk, $agama, $kehadiran)

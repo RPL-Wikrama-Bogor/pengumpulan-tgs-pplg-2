@@ -4,7 +4,7 @@ $jam;
 $menit;
 $detik;
 $total;
-
+//aldo
 ?>
 
 <!DOCTYPE html>
