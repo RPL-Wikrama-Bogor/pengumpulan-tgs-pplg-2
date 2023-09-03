@@ -17,7 +17,7 @@
     <label for="ekonomi">Masukan Tiket Ekonomi : </label>
     <input type="number" name="ekonomi" id="ekonomi" required><br>
 
-    <button name="submit" id="submit">Kirim</button>
+    <button name="submit" id="submit">Kirim!</button>
   </form>
 </body>
 </html>
