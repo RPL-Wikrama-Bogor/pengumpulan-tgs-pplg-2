@@ -16,6 +16,11 @@
 </html>
 
 
+// perbedaan sama dengan =  ==  ===
+// = inisialisasi value
+// == perbandingan tanpa mengecek tipe data
+// === perbandingan dan harus mengecek tipe data
+
 
 <?php
 
