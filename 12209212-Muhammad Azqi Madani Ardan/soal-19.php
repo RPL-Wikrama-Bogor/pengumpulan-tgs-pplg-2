@@ -64,7 +64,7 @@ $total_untung;
         </div>
 
         <div class="three" style="display: flex;">
-        <label for="eksekutif">Masukkan tiket eksekutif yang terjual :
+        <label for="eksekutif">Masukkan tiket eksekutif yang terjual .:
         </label>
         <input type="number" name="eksekutif" id="eksekutif">
         </div>
