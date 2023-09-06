@@ -12,7 +12,7 @@ class Bioskop {
 
     public function __construct($Ekonomi, $Vip, $Eksekutif) 
     {
-        if (!i$Ekonomi) || !is_numeric($Vip) || !is_numeric($Eksekutif)) 
+        if (!is_numeric($Ekonomi) || !is_numeric($Vip) || !is_numeric($Eksekutif)) 
         {
             exit("<p class='error'>Input harus berupa angka</p>");
         } elseif ($Ekonomi > 50 || $Vip > 50 || $Eksekutif > 50) 
