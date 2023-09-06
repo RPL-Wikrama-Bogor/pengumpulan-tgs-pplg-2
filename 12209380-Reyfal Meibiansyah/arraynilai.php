@@ -25,6 +25,7 @@ echo "Urutan dari terbesar ke terkecil: " . implode( "," , $nilai) ;
 echo "<br>";
 
 $sumNilai = array_sum($nilai);
+
 $rataNilai = $sumNilai / 6 ;
 
 echo "Rata-rata nilai saya: " . round($rataNilai) ;
