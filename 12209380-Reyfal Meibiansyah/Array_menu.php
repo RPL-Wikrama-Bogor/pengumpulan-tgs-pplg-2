@@ -1,160 +1,161 @@
 <?php
-$menus =  [
+ $listmenu = [
     [
-        "nama" => "Nasi Goreng",
-        "harga" => 15000,
-        "type" => "makanan"
+        'menu' => 'Nasi Goreng',
+        'harga' => 15000,
+        'tipe' => 'makanan',
     ],
     [
-        "nama" => "Mie Goreng",
-        "harga" => 10000,
-        "type" => "makanan"
+        'menu' => 'Mie Goreng',
+        'harga' => 10000,
+        'tipe' => 'makanan',
     ],
     [
-        "nama" => "Kwetiaw",
-        "harga" => 15000,
-        "type" => "makanan"
+        'menu' =>'Kwetiaw',
+        'harga' => 15000,
+        'tipe' =>'makanan',
     ],
     [
-        "nama" => "Es Jeruk",
-        "harga" => 5000,
-        "type" => "minuman"
-    ], 
-    [
-        "nama" => "Es Teh Manis",
-        "harga" => 5000,
-        "type" => "minuman"
+        'menu' => 'Es Jeruk',
+        'harga' => 5000,
+        'tipe' =>'minuman',
     ],
+    [
+        'menu' => 'Coklat panas',
+        'harga' => 8000,
+        'tipe' =>'minuman',
+    ],
+    [
+        'menu' => 'Teh Manis',
+        'harga' => 5000,
+        'tipe' =>'minuman',
+    ]
 ];
-
-
-$pesanMakanan = "";
-$pesanMinuman = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $makanan = $_POST["makanan"];
-    $jumlahMakanan = $_POST["jumlahmak"];
-    $minuman = $_POST["minuman"];
-    $jumlahMinuman = $_POST["jumlahmin"];
-
-   
-    $totalMakanan = 0;
-    $totalMinuman = 0;
-
-    foreach ($menus as $menu) {
-        if ($menu["nama"] === $makanan) {
-            $totalMakanan = $menu["harga"] * $jumlahMakanan;
-        } elseif ($menu["nama"] === $minuman) {
-            $totalMinuman = $menu["harga"] * $jumlahMinuman;
-        }
-    }
-
-
-    $totalPesanan = $totalMakanan + $totalMinuman;
-
- 
-    if (($jumlahMakanan + $jumlahMinuman) > 5) {
-        $diskon = 0.1 * $totalPesanan; // 10% diskon
-        $totalPesanan -= $diskon;
-    }
-
- 
-    $pesanMakanan = "Pesanan Makanan ($makanan x $jumlahMakanan) - Total: Rp $totalMakanan";
-    $pesanMinuman = "Pesanan Minuman ($minuman x $jumlahMinuman) - Total: Rp $totalMinuman";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasir Online</title>
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 500px;
+        }
+        li {
+            text-align: left;
+        }
+        .php{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-size: 15px;
+            border: 1px solid black;
+            width: 500px;
+            height:100px ;
+        }
+    .result{
+        margin-top: 45px;
+    }
+    </style>
 </head>
-<style>
-    div {
-        width: 500px;
-        height: 300px;
-    }
-    .border {
-        border: 1px solid black;
-        margin-left: 400px;
-    }
-    .m {
-        text-align: center;
-    }
-    .input {
-        border: 1px solid black;
-        margin-top: -50px;
-        width: 500px;
-        height: 200px;
-        padding-bottom: 100px;
-    }
-    .out {
-        border: 1px solid black;
-        margin-top: -100px;
-        width: 500px;
-        height: 200px;
-        margin-top: 100px;
-    }
-    .button {
-        width: 495px;
-    }
-</style>
 <body>
-<div class="container">
-    <div class="border">
-        <div class="m"> <h1>Menu</h1></br> 
-            <?php foreach ($menus as $menu) : ?>
-                <div class="menu">
-                    <p><?php echo $menu['nama'] ?> - Rp <?php echo $menu['harga'] ?></p>
-            <?php endforeach; ?>
+    <center>
+     <div class="container">
+        <h3>Daftar Menu</h3>
+        <ol>
+            <?php foreach ($listmenu as $key => $menu) {?>
+                <li>
+                    <p>Menu : <?=$menu['menu']?><br>
+                     Harga : <?=$menu['harga']?>
+                </li>
+            <?php }?>
+        </ol>
+     </div>
+    <br>
+    <form action="" method="post">
+        <div class="container">
+            <div style="display: flex; padding-left: 20px">
+            <p>Pilih Makanan :</p>
+            <select name="makanan" style="width: 300px; height: 30px; margin-top: 10px;">
+                <option hidden selected>--Pilih--</option>
+              <?php  foreach ($listmenu as $menu) : ?>
+                    <?php if($menu['tipe'] === 'makanan') : ?>
+                    <option value="<?php echo $menu['menu'] ?>"><?php echo $menu['menu'] ?></option>
+                     <?php endif;?>
+                <?php endforeach;?>
+            </select>
+            </div>           
+            <div style="display: flex; padding-left: 20px">
+            <label for="jumlahmak">Jumlah Makanan:</label>
+        <input type="number" id="jmlmakanan" name="jmlmakanan" min="0" value="0">
+            </div>
+            <div style="display: flex; padding-left: 20px">
+            <p>Pilih Minuman :</p>
+            <select name="minuman" style="width: 300px; height: 30px; margin-top: 10px;">
+                <option hidden selected>--Pilih--</option>
+              <?php  foreach ($listmenu as $menu) : ?>
+                    <?php if($menu['tipe'] === 'minuman') : ?>
+                    <option value="<?php echo $menu['menu'] ?>"><?php echo $menu['menu'] ?></option>
+                     <?php endif;?>
+                <?php endforeach;?>
+            </select>
+            </div>
+            <div style="display: flex; padding-left: 20px">
+            <label for="jumlahmak">Jumlah Minuman:</label>
+        <input type="number" id="jmlminuman" name="jmlminuman" min="0" value="0">
+            </div>
+            <br>
+            <div class="submit">
+                <button type="submit" name="submit" style="width: 450px;">Beli</button>
+            </div><br>
+            </div>
+        <div class="php">
+                    <?php 
+            if (isset($_POST['submit'])) {
+                $makanan = $_POST['makanan'];
+                $minuman = $_POST['minuman'];
+                $jmlMakanan = $_POST['jmlmakanan'];
+                $jmlMinuman = $_POST['jmlminuman'];
+                $hargaMakanan = 0;
+                $hargaMinuman = 0;
+
+                foreach ($listmenu as $menu) {
+                    if ($menu['menu'] === $makanan) {
+                        $hargaMakanan = $menu['harga'];
+                    }
+                    if ($menu['menu'] === $minuman) {
+                        $hargaMinuman = $menu['harga'];
+                    }
+                };
+
+                $totalMakanan = $jmlMakanan * $hargaMakanan;
+                $totalMinuman = $jmlMinuman * $hargaMinuman;
+                $totalKomplit = $totalMakanan + $totalMinuman;
+
+                ?>
+            <div class="result">
+                <?php
+                if ($totalKomplit == 0) {
+                                    echo "anda harus membeli terlebih dahulu ";
+                                }
+                elseif ($jmlMinuman == 0) {
+                    echo "Anda membeli " . $jmlMakanan . " " . $makanan . " Dan total Anda menjadi Rp ". $totalMakanan ;
+                }
+
+                elseif ($jmlMakanan == 0) {
+                    echo "Anda membeli " . $jmlMinuman . " " . $minuman . " Dan total Anda menjadi Rp ". $totalMinuman ;
+                }
+
+                elseif ($jmlMakanan > 0 && $jmlMinuman > 0) {
+                    echo "Anda membeli " . $jmlMakanan . " " . $makanan . " Dan ". $jmlMinuman . " " . $minuman . " Dan total anda menjadi Rp" . $totalKomplit;
+                }
+              }?>
+            </div>
         </div> 
-    </div>
-</div>
-</div>
-<div class="input">
-    <h1>Order</h1></br> 
-    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-        <label for="makanan">Pilih Makanan:</label>
-        <select id="makanan" name="makanan">
-            <?php foreach ($menus as $menu) : ?>
-                <?php if ($menu['type'] === 'makanan') : ?>
-                    <option hidden disabled selected>Pilih Makanan Disini</option>
-                    <option value="<?php echo $menu['nama'] ?>"><?php echo $menu['nama'] ?></option>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </select>
-        <br><br>
-        <label for="jumlahmak">Jumlah Makanan:</label>
-        <input type="number" id="jumlahmak" name="jumlahmak" min="1" value="0">
-        <br><br>
-        <label for="minuman">Pilih Minuman:</label>
-        <select id="minuman" name="minuman">
-            <?php foreach ($menus as $menu) : ?>
-                <?php if ($menu['type'] === 'minuman') : ?>
-                    <option hidden disabled selected>Pilih Minuman Disini</option>
-                    <option value="<?php echo $menu['nama'] ?>"><?php echo $menu['nama'] ?></option>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </select>
-        <br><br>
-        <label for="jumlahmin">Jumlah Minuman:</label>
-        <input type="number" id="jumlahmin" name="jumlahmin" min="1" value="0">
-        <br><br>
-        <input class="button" type="submit" value="Pesan Orderan Anda">
-    </form>
-</div>
-<div class="out">
-    <?php if ($pesanMakanan !== "" || $pesanMinuman !== "") : ?>
-        <h2>Detail Pesanan:</h2>
-        <?php if ($pesanMakanan !== "") : ?>
-            <p><?php echo $pesanMakanan; ?></p>
-        <?php endif; ?>
-        <?php if ($pesanMinuman !== "") : ?>
-            <p><?php echo $pesanMinuman; ?></p>
-        <?php endif; ?>
-        <p>Total Pesanan Anda: Rp <?php echo number_format($totalPesanan, 0, ',', '.'); ?></p>
-    <?php endif; ?>
-</div>
+</center>
+</form>
 </body>
 </html>
+
