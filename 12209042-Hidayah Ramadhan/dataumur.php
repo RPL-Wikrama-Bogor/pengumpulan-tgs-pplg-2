@@ -40,7 +40,7 @@ $siswa = [
 ?>
 <form action="" method="post">
     <li>opsi 1 : jika di klik menampilkan data yang memiliki umur>=17</li>
-    <li>opsi 2 : menampilkan data diri nama yang dicari</li>
+    <li>opsi 2 : menampilkan data diri nama yang dicari</li>
     <ul>
         <li>
             <a href="?cari" style="text-decoration: none;">Cari yang sudah berusia lebih dari 17 tahun</a>
@@ -58,7 +58,7 @@ $siswa = [
     if(isset($_GET['cari'])){
         foreach($siswa as $key => $data_siswa){
             if($data_siswa['umur'] >= 17){
-                echo"<ul><li>$data_siswa[nama]$data_siswa[umur]</li></ul>";
+                echo"<ul><li>$data_siswa[nama] : $data_siswa[umur]</li></ul>";
 
             }
         }
@@ -66,9 +66,11 @@ $siswa = [
 ?>
     <?php
     if(isset($_POST['submit'])){
-        $nama = $_POST['nama'];
+        $nama =strtolower($_POST['nama']);
+
+        echo "<ol>";
         foreach($siswa as $key => $data_siswa){
-            if($nama == $data_siswa['nama']){
+            if($nama == $data_siswa['nama'] || $nama == strtolower($data_siswa['nama'])){
                 echo "Nama : $nama<br>";
                 echo "Nis : $data_siswa[nis]<br>";
                 echo "Rombel : $data_siswa[rombel]<br>";
@@ -76,6 +78,7 @@ $siswa = [
                 echo "Umur : $data_siswa[umur]<br>";
             }
         }
+        echo "</ol>";
     }
 ?>
 </body>
