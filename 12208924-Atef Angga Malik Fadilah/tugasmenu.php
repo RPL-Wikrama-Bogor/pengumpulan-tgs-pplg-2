@@ -31,7 +31,7 @@
     $pesanMakanan = "";
     $pesanMinuman = "";
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ( $_SERVER["REQUEST_METHOD"] == "POST") {
         $makanan = $_POST["makanan"];
         $jumlahMakanan = $_POST["jmlmakanan"];
         $minuman = $_POST["minuman"];
@@ -57,8 +57,8 @@
             $diskon = 0;
         }
             
-        $pesanMakanan = "Pesanan Makanan ($makanan x $jumlahMakanan) - Total: Rp $totalMakanan";
-        $pesanMinuman = "Pesanan Minuman ($minuman x $jumlahMinuman) - Total: Rp $totalMinuman";
+        $pesanMakanan = "$makanan x $jumlahMakanan = $totalMakanan";
+        $pesanMinuman = "$minuman x $jumlahMinuman = $totalMinuman";
     }
        
 ?>
@@ -104,7 +104,7 @@
             <h3>Daftar Menu</h3>
                 <ol>
             <?php
-                foreach($menus as $menu => $daftar) {
+                foreach( $menus as $menu => $daftar ) {
             ?>
                     <li>                       
                         <p>Menu : <?= $daftar["menu"] ?> <br>
@@ -115,11 +115,12 @@
             ?>
                 </ol>
         </div><br>
+
         <div class="container">
             <br>
             <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="post">
                 <div style="display: flex; padding-left: 20px;"><br>
-                    <p>Pilih Makanan : </p>
+                    <p>Pilih makanan : </p>
                         <select name="makanan" required>            
                             <option hidden disabled selected>--Pilih Makanan--</option>
                             <?php foreach($menus as $menu) : ?>
@@ -164,10 +165,10 @@
                     <h3>Bukti Pembelian</h3>
                     <ul>
                         <li>Makanan : <?= $makanan . " (". $jumlahMakanan .") "; ?></li>
-                        <li>Harga Makanan : <?= $totalMakanan ?></li>
+                        <li>Harga Makanan : Rp <?= $totalMakanan ?></li>
                         <li>minuman : <?= $minuman . " (". $jumlahMinuman .") "; ?></li>
-                        <li>Harga Minuman : <?= $totalMinuman ?></li>
-                        <li>Diskon yang didapat : <?= $diskon ?></li>
+                        <li>Harga Minuman : Rp <?= $totalMinuman ?></li>
+                        <li>Diskon yang didapat : Rp <?= $diskon ?></li>
                         <li>Total Pembayaran : <b>Rp <?= number_format($totalPesanan, 0, ',', '.'); ?></b></li>
                     </ul>
                 </div>
