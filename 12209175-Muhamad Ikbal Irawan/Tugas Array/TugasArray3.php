@@ -156,11 +156,11 @@
             $nama = $_POST['nama'];
             foreach($siswa as $key => $murid){
                 $key += 1;
-                if($murid['nama'] == $nama ){
+                if($nama == $murid['nama'] || $nama == strtoupper($murid['nama']) || $nama == strtolower($murid['nama'])) {
                     
                     echo "<br><b>".$key.". ".$nama." | ".$murid['umur']." | ".$murid['nis']." | ".$murid['rombel']." | ".$murid['rayon']."</b><br>";
                 }
-            }
+            } 
         }
 
     ?>
