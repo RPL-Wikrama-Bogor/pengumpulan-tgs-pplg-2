@@ -255,21 +255,25 @@ $menus = [
 
                 if ($pesanMakan == 1) {
                     echo "<p style=''>Silahkan untuk membayar sebesar Rp. " . number_format($harga_makanan, 2, ',', '.') . "</p>";
-                } else {
+                } 
+                else {
                     for ($i = 0; $i < $pesanMakan; $i++) {
 
                         $jumlah_makanan += $harga_makanan;
                     }
                     echo "<p style=''>Silahkan untuk membayar sebesar Rp. " . number_format($jumlah_makanan, 2, ',', '.') . "</p>";
                 }
+
                 if ($pesanMinum == 1) {
                     echo "<p style=''>Silahkan untuk membayar sebesar Rp. " . number_format($harga_minuman, 2, ',', '.') . "</p>";
-                } else {
+                } 
+                else {
                     for ($i = 0; $i < $pesanMinum; $i++) {
                         $jumlah_minuman += $harga_minuman;
                     }
                     echo "<p style=''>Silahkan untuk membayar sebesar Rp. " . number_format($jumlah_minuman, 2, ',', '.') . "</p>";
                 }
+
                 $jumlah = $jumlah_makanan + $jumlah_minuman;
                 echo "Diskon yang didapat :" . $diskon . "%" . "<br>";
                 echo "Total Pembayaran : " . number_format($jumlah, 2, ',', '.');
