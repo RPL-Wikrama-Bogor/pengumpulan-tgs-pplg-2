@@ -22,7 +22,7 @@
     <div class="container my-5">
         <div class="card" >
             <div class="card-body border border-primary">
-                <h1 class="text-center mt-1 text-primary">Kode Pegawai</h1>
+                <h1 class="text-center mt-1 text-primary">Kode pegawai</h1>
                 <form action="" method="post">
                     <div class="input-group mt-3 mb-4">
                         <input type="number" name="no_pegawai" class="form-control" placeholder="Masukkan No Pegawai (Wajib 11 Angka!)" aria-label="Masukkan No Pegawai (Wajib 11 Angka!)" aria-describedby="button-addon2">
