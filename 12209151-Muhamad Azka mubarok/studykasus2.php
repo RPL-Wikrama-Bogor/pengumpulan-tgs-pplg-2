@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 20px 20px;
             margin-top: 20px;
         }
-        .out {
+        .output {
             border: 1px solid black;
             width: 480px;
             max-width: 500px;
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             text-align: left;
             padding: 10px;
         }
-        .out p{
+        .output p{
             margin-left: px;
         }
     </style>
