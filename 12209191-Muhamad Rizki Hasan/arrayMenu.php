@@ -1,161 +1,97 @@
 <?php
-$menus = [
+$siswa = [
     [
-        'menu' => 'Nasi Goreng',
-        'harga' => 15000,
-        'tipe' => 'makanan',
+        "nama" => "HASAN",
+        "nis" => 12209191,
+        "rombel" => "PPLG XI-2",
+        "rayon" => "Cicurug 6",
+        "umur" => 17,
     ],
     [
-        'menu' => 'Mie Goreng',
-        'harga' => 10000,
-        'tipe' => 'makanan',
+        "nama" => "Rizki",
+        "nis" => 12209192,
+        "rombel" => "PPLG XI-3",
+        "rayon" => "Cicurug 7",
+        "umur" => 17,
     ],
     [
-        'menu' => 'Kwetiau',
-        'harga' => 15000,
-        'tipe' => 'makanan',
+        "nama" => "Ujang",
+        "nis" => 12209193,
+        "rombel" => "PPLG XI-4",
+        "rayon" => "Cicurug 8",
+        "umur" => 19,
     ],
     [
-        'menu' => 'Es Jeruk',
-        'harga' => 5000,
-        'tipe' => 'minuman',
+        "nama" => "Jamal",
+        "nis" => 12209194,
+        "rombel" => "PPLG XI-5",
+        "rayon" => "Cicurug 9",
+        "umur" => 16,
     ],
     [
-        'menu' => 'Teh Manis',
-        'harga' => 5000,
-        'tipe' => 'minuman',
+        "nama" => "Udin",
+        "nis" => 12209195,
+        "rombel" => "PPLG XI-6",
+        "rayon" => "Cicurug 10",
+        "umur" => 15,
     ],
 ]
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Tugas Mencari Nama</title>
     <style>
         body {
-            margin: 2% 30% 0 30%;
-            height: 1000px;
-        }
-
-        .menus {
-            border: solid black 3px;
-        }
-
-        li {
-            list-style: none;
-            font-weight: bold;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        p {
-            margin-left: 3%;
-        }
-
-        .input {
-            border: solid black 3px;
-            padding: 10px;
-        }
-
-        button {
-            padding: 0 45% 0 45%;
+            margin: 2%;
         }
     </style>
 </head>
 
 <body>
-    <div class="menus">
-        <h1>Daftar Menu😁</h1>
-        <?php foreach ($menus as $keyId => $menu) { ?>
-            <ul>
-                <?php $keyId += 1; ?>
-                <li><?= $keyId ?>.Menu : <?= $menu['menu'] ?></li>
-                <p>Harga : <?= $menu['harga'] ?></p>
-            </ul>
-        <?php } ?>
-    </div>
+    <p>Opsi 1 : Jika di klik menampilkan data yang memiliki umur >= 17</p>
+    <p>Opsi 2 : Menampilkan data dari nama yang dicari</p>
 
-    <br>
+    <form action="" method="post">
+        <ul>
+            <li><a href="?cari">Cari yang sudah berusia lebih dari 17 tahun</a></li>
+            <li>Cari berdasarkan nama : <input type="text" name="nama"><button type="submit" name="kirim">Kirim</button></li>
+        </ul>
+    </form>
 
-    <div class="input">
-        <form action="" method="post">
-            <label for="makanan">Pilih Makanan : </label>
-            <select name="makanan" id="makanan">
-                <option hidden disabled selected>-----Pilih-----</option>
-                    <?php foreach ($menus as $key => $menu) { 
-                        if ($menu["tipe"] == "makanan") {
-                    ?>
-                <option value="<?= $key ?>"><?= $menu["menu"] ?></option>
-                    <?php } } ?>
-            </select>
-
-            <br><br>
-            <label for="makanan">Jumlah Pembelian Makanan : </label>
-            <input type="number" name="jumlahMakanan" id="makanan" required>
-            <br><br>
-
-            <label for="minuman">Pilih Minuman : </label>
-            <select name="minuman" id="minuman">
-                    <option hidden disabled selected>-----Pilih-----</option>
-                        <?php foreach ($menus as $key => $menu) { 
-                            if ($menu["tipe"] == "minuman") {
-                        ?>
-                    <option value="<?= $key ?>"><?= $menu["menu"] ?></option>
-                <?php } } ?>
-            </select>
-
-            <br><br>
-            <label for="minuman">Jumlah Pembelian Minuman : </label>
-            <input type="number" name="jumlahMinuman" id="minuman" required>
-            <br><br>
-
-            <button type="submit" name="beli">Beli</button>
-        </form>
-    </div>
-    <br>
-<?php
-    if (isset($_POST["beli"])) {
-        $jumlahMakanan = $_POST["jumlahMakanan"];
-        $jumlahMinuman = $_POST["jumlahMinuman"];
-
-        $makananId = $_POST["makanan"];
-        $minumanId = $_POST["minuman"];
-
-        $namaMakanan = $menus[$makananId]["menu"];
-        $namaMinuman = $menus[$minumanId]["menu"];
-
-        $hargaMakananAwal = $menus[$makananId]["harga"];
-        $hargaMinumanAwal = $menus[$minumanId]["harga"];
-
-        $hargaMakananAkhir = $jumlahMakanan * $hargaMakananAwal;
-        $hargaMinumanAkhir = $jumlahMinuman * $hargaMinumanAwal;
-
-        $totalHarga = $hargaMakananAkhir + $hargaMinumanAkhir;
-
-        if ($totalHarga > 50000) {
-            $diskon = $totalHarga * (10 / 100);
-            $totalHarga -= $diskon;
-        } else {
-            $diskon = 0;
+    <ol>
+    <?php 
+        if (isset($_GET["cari"])) {
+            foreach ($siswa as $key => $data_siswa) {
+                if ($data_siswa["umur"] >= 17) {
+                    echo "<li>$data_siswa[nama] | $data_siswa[umur] </li><br>";
+                }
+            }
         }
-?>
-    <div style="border: solid black 3px;">
-        <h1>Bukti Pembelian</h1>
-        <p>Makanan : <?= $namaMakanan ?> (<?= $jumlahMakanan ?>)</p>
-        <p>Harga Makanan : <?= $hargaMakananAkhir ?></p>
+    ?>
+    </ol>
 
-        <p>Minuman : <?= $namaMinuman ?> (<?= $jumlahMinuman ?>)</p>
-        <p>Harga Minuman : <?= $hargaMinumanAkhir ?></p>
+    <?php
+    if (isset($_POST["kirim"])) {
+        $nama = strtolower($_POST["nama"]);
 
-        <p>Diskon : <?= $diskon ?></p>
-        <p>Total Pembayaran : <b>Rp <?= number_format($totalHarga, 2, ',', '.') ?></b></p>
-    </div>
-<?php } ?>
+        echo "<ol>";
+        foreach ($siswa as $key => $data_siswa) {
+            if ($nama == $data_siswa['nama'] || $nama == strtolower($data_siswa['nama'])) {
+                echo "<li> $nama | ";
+                echo "$data_siswa[umur] | ";
+                echo "$data_siswa[nis] | ";
+                echo "$data_siswa[rombel] | ";
+                echo "$data_siswa[rayon] </li>";
+            }
+        }
+        echo "</ol>";
+    }
+    ?>
+
 </body>
+
 </html>
