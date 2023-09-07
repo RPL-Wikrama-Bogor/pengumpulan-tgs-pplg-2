@@ -8,25 +8,25 @@
         "umur" => 18
     ],
     [
-        "nama" => "ibong",
+        "nama" => "reyfal",
         "nis" => 10097989,
-        "rombel" => "PPLG XI-10",
-        "rayon" => "wikrama 10",
-        "umur" => 17
+        "rombel" => "PPLG XI-2",
+        "rayon" => "cicurug 1",
+        "umur" => 16
     ],
     [
         "nama" => "tedi",
         "nis" => 11093498,
-        "rombel" => "PPLG XI-90",
-        "rayon" => "cibeduh 80",
+        "rombel" => "PPLG XI-9",
+        "rayon" => "cibedug 8",
         "umur" => 17
     ],
     [
         "nama" => "surya",
         "nis" => 10909890,
-        "rombel" => "PPLG XI-100",
-        "rayon" => "tajur 99",
-        "umur" => 16
+        "rombel" => "PPLG XI-10",
+        "rayon" => "tajur 9",
+        "umur" => 19
     ]
 
 ];
@@ -55,7 +55,7 @@
 </form>
 <?php 
 
-    if (isset($_GET['kirim'])) {
+    if (isset($_GET['kirim'])) { 
     foreach ($datas as $data) {
         if ($data['umur'] >= 17) {
             echo "Nama: " . $data['nama'] . ", Umur: " . $data['umur'] . "<br><br>";
@@ -66,15 +66,15 @@
 <?php
     if (isset($_POST['submit'])) {
         $nama = $_POST['nama'];
-        foreach($datas as $key => $data_siswa){
-        if ($nama == $data_siswa['nama']) {
+        foreach($datas as $key => $data_diri){
+        if ($nama == $data_diri['nama']) {
             echo "nama : $nama <br>";
-            echo "nis : $data_siswa[nis]<br>";
-            echo "rombel : $data_siswa[rombel]<br>";
-            echo "rayon : $data_siswa[rayon]<br>";
-            echo "umur : $data_siswa[umur]";
+            echo "nis : $data_diri[nis]<br>";
+            echo "rombel : $data_diri[rombel]<br>";
+            echo "rayon : $data_diri[rayon]<br>";
+            echo "umur : $data_diri[umur]";
+        }
     }
-}
 }
 ?>
 </body>
