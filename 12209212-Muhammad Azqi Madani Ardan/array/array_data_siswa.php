@@ -95,6 +95,10 @@ if (isset($_POST['submit'])) {
                 "Umur : ".$siswa['umur'] ;
                 break;
         }
+        else{
+            echo "Nama/Data tidak ditemukan !";
+            break;
+        }
     };
 
 }
