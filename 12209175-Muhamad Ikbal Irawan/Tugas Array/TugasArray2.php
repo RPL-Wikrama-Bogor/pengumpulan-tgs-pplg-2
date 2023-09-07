@@ -2,6 +2,11 @@
 
 $listmenu = [
     [
+        "menu" => "Nasi Goreng",
+        "harga" => 15000,
+        "tipe" => "Makanan"
+    ],
+    [
         "menu" => "Mie Goreng",
         "harga" => 10000,
         "tipe" => "Makanan"
