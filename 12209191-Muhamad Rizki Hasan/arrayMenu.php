@@ -30,13 +30,15 @@ $menus = [
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Makanan dan Minuman</title>
+    <title>Menu</title>
     <style>
         body {
             margin: 2% 30% 0 30%;
+            height: 1000px;
         }
 
         .menus {
@@ -66,6 +68,7 @@ $menus = [
         }
     </style>
 </head>
+
 <body>
     <div class="menus">
         <h1>Daftar Menu😁</h1>
@@ -82,42 +85,34 @@ $menus = [
 
     <div class="input">
         <form action="" method="post">
-            <span>Pilih Makanan : </span>
-            <select name="makanan">
+            <label for="makanan">Pilih Makanan : </label>
+            <select name="makanan" id="makanan">
                 <option hidden disabled selected>-----Pilih-----</option>
-                <?php foreach ($menus as $key => $menu) { ?>
-                    <option value="<?= $key ?>">
-                        <?php if ($menu["tipe"] == "makanan") { ?>
-                            <?= $menu["menu"]; ?>
-                        <?php } else { ?>
-                            <?= $menu["menu"] = "" ?>
-                        <?php } ?>
-                    </option>
-                <?php } ?>
+                    <?php foreach ($menus as $key => $menu) { 
+                        if ($menu["tipe"] == "makanan") {
+                    ?>
+                <option value="<?= $key ?>"><?= $menu["menu"] ?></option>
+                    <?php } } ?>
             </select>
 
             <br><br>
             <label for="makanan">Jumlah Pembelian Makanan : </label>
-            <input type="number" name="jumlahMakanan" id="makanan">
+            <input type="number" name="jumlahMakanan" id="makanan" required>
             <br><br>
 
-            <span>Pilih Minuman : </span>
-            <select name="minuman">
-                <option hidden disabled selected>-----Pilih-----</option>
-                <?php foreach ($menus as $key => $menu) { ?>
-                    <option value="<?= $key ?>">
-                        <?php if ($menu["tipe"] == "minuman") { ?>
-                            <?= $menu["menu"]; ?>
-                        <?php } else { ?>
-                            <?= $menu["menu"] = "" ?>
-                        <?php } ?>
-                    </option>
-                <?php } ?>
+            <label for="minuman">Pilih Minuman : </label>
+            <select name="minuman" id="minuman">
+                    <option hidden disabled selected>-----Pilih-----</option>
+                        <?php foreach ($menus as $key => $menu) { 
+                            if ($menu["tipe"] == "minuman") {
+                        ?>
+                    <option value="<?= $key ?>"><?= $menu["menu"] ?></option>
+                <?php } } ?>
             </select>
 
             <br><br>
             <label for="minuman">Jumlah Pembelian Minuman : </label>
-            <input type="number" name="jumlahMinuman" id="minuman">
+            <input type="number" name="jumlahMinuman" id="minuman" required>
             <br><br>
 
             <button type="submit" name="beli">Beli</button>
