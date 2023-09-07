@@ -1,7 +1,7 @@
 <?php
 $siswa = [
     [
-        "nama" => "Hasan",
+        "nama" => "HASAN",
         "nis" => 12209191,
         "rombel" => "PPLG XI-2",
         "rayon" => "Cicurug 6",
@@ -76,11 +76,11 @@ $siswa = [
 
     <?php
     if (isset($_POST["kirim"])) {
-        $nama = $_POST["nama"];
+        $nama = strtolower($_POST["nama"]);
 
         echo "<ol>";
         foreach ($siswa as $key => $data_siswa) {
-            if ($nama == $data_siswa['nama']) {
+            if ($nama == $data_siswa['nama'] || $nama == strtolower($data_siswa['nama'])) {
                 echo "<li> $nama | ";
                 echo "$data_siswa[umur] | ";
                 echo "$data_siswa[nis] | ";
