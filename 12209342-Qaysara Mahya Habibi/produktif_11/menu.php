@@ -36,8 +36,7 @@ $menus = [
     <title>makan</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #E4E4D0;
+            font-family: Arial, sans-serif;             
             margin: 0;
             padding: 0;
         }
@@ -94,10 +93,8 @@ $menus = [
             font-weight: bold;
         }
 
-        .submit {
-            background-color: #94A684;
-            color: #fff;
-            padding: 10px 20px;
+        .submit {   
+            padding: 10px 200px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
@@ -152,7 +149,6 @@ $menus = [
             <label for="food_quantity">Jumlah Pembelian Makanan:</label>
             <input class="number" type="number" id="food_quantity" name="food_quantity" required><br>
 
-            <!-- <h2>Minuman</h2> -->
             <label for="drink_menu">Pilih Minuman:</label>
             <select id="drink_menu" name="drink_menu">
                 <option hidden disabled selected>---select here---</option>
