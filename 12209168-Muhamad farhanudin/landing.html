@@ -1,146 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      body {
-        background-color: antiquewhite;
-      }
-      li {
-        font-family: roboto;
-      }
-     a{
-        background-color: #F4EEEE;
-        float: right;
-        text-decoration: none;
-        border-radius: 50px;          
-        padding: 15px;
-        color: black;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-     a:hover {
-      color: #5C8374;
-      transition: 0.3s;
-     }
 
-     text{
-        float: left;
-        width: 50%;
-     }
-     .gambar{
-        width: 50%;
-        margin: 90px  1px 10px 1px;
-        float: right;
-        padding-right: -200px;
-        clear: left ;
-     }
-    
-     img{
-          width:550%;
-          max-width: 100%;
-          margin-left : 108px;
-          border-radius: 15px;
-          margin-top: -30px;
-        }
-    .text{
-        font-size: 25px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengaduan Masyarakat</title>
+  <style>
+    body {
+      margin: 30px;
+      background-color: antiquewhite;
     }
-    .baris{
-        box-sizing: border-box;
-				padding: 20px;
-      }
-      .kolom{
-        width: 295px;
-        height: 120px;
-        background-color: #7091F5;
-        margin: 3px;
-        box-sizing: border-box;
-				padding: 10px;
-      }
-      .kolom1,.kolom2, .kolom3, .kolom4{
-        float: left;
-        text-align: center;
-        padding-top: 3rem;
-        border-radius: 15px;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .kolom:hover {
-        width: 290px;
-        transition: 0.3s;
-        background-color: #5C8374;
-      }
-      .form {
-        width: 500px;
-        border-radius: 1rem;
-        background-color: #F4EEEE;
-        padding: 2rem;
-        border-radius: 15px;
-      }
-      input {
-        width: 90%;
-      }
-      .pengaduan {
-        height: 200px;
-      }
-      label {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      button {
-        float: right;
-      }
-      .button {
+
+    button {
         float: right;
         background-color: orange;
         text-decoration: none;
         padding: 10px 12px;
         border-radius: 50px;
+    }
+
+    .konten {
+      display: flex;
+      margin: 35px;
+    }
+
+    .text {
+      flex: 1;
+      font-size: 15px;
+      padding: 15px;
+    }
+
+    img {
+      float: left;
+      width: 650px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .kolomm {
+      display: flex;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    .kolom:hover {
+      width: 290px;
+      transition: 0.3s;
+      background-color: #525FE1;
+    }
+
+    .kolom {
+      flex: 1;
+      margin: 3px;
+      padding: 30px;
+      background-color: rgb(249, 193, 40);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .kotak-persegi-panjang {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .gambar {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .gambar img {
+      max-width: 100%;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .rincian {
+      flex: 2;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rincian p {
+      margin: 0;
+      padding: 10px;
+    }
+
+
+    footer {
+      background-color: rgb(249, 193, 40);
+      text-align: center;
+      height: 23px;
+      padding-top: 7px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      body {
+        margin: 15px;
       }
-    </style>
+
+      .konten {
+        flex-direction: column;
+        margin: 15px;
+      }
+
+      .footer {
+        margin-top: 40rem;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .kolomm {
+        flex-direction: column;
+      }
+
+      .kolom {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .formm {
+        flex-direction: column;
+      }
+
+      .form,
+      .laporan {
+        flex: auto;
+        margin: 10px;
+      }
+
+      .form textarea {
+        width: 225px;
+      }
+
+      footer {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <a href="" class="button">Administrator</a>
-  <div class="gambar">
-      <img src="ling.jpg" alt="">
-      </div>
-      <br><br>
-    <h1>Qng zue (ling)</h1>
+  <button>Administrasi</button>
+  <br><br><br>
+  <section class="konten">
     <div class="text">
+      <h1>ling</h1>
       <ol>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quam et blanditiis at dolores earum id fuga voluptate magnam minima?        <br>
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga voluptatum omnis magni a consectetur, eius earum nemo.        <br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem quasi veniam nam reiciendis quo.        <br>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, architecto?</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aut voluptatum nostrum!</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, aut commodi! Ullam tenetur rem nesciunt libero fuga illum. 
+        </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod numquam placeat deleniti officiis veritatis, magnam animi laudantium in nesciunt harum.</li>
       </ol>
     </div>
-    <section class="baris">
-      <div class="kolom kolom1">Kolom 1</div>
-      <div class="kolom kolom2">Kolom 2</div>
-      <div class="kolom kolom3">Kolom 3</div>
-      <div class="kolom kolom3">Kolom 4</div>
-    </section>
-    <br><br><br><br><br><br><br><br><br>
-    <div class="form">
-      <label for="" class="label">NIK:</label>
-      <br>
-      <input type="text" name="nik" id="nik">
-      <br>
-      <label for="" class="label">Nama Lengkap:</label>
-      <input type="text" name="nama" id="nama">
-      <br>
-      <label for="" class="label">No Telepon:</label>
-      <input type="text" name="no" id="no">
-      <br>
-      <label for=" "pengaduan">Pengaduan</label>
-      <input type="text" class="pengaduan" name="pengaduan" id="pengaduan">
-      <br>
-      <label for="" class="label">Upload Gambar Terkait</label>
-      <br>
-      <input type="file" name="gambar" id="gambar">
-      <br>
-      <br> <button>Kirim</button>
+    <img src="img/ling.jpg" alt="">
+  </section>
+  <section class="kolomm">
+    <div class="kolom">Asasint</div>
+    <div class="kolom">25 kill</div>
+    <div class="kolom">12 death</div>
+    <div class="kolom">Lorem, ipsum.</div>
+  </section>
+  <br><br>
+  <section class="formm" style="height: 100vh; display: flex; margin: 20px;">
+    <div class="form" style="flex: 1;  background-color: #f2f2f2; padding: 20px;">
+      <form action="" textare>
+        <h3>Hasil Pengaduan</h3>
+        <label for="">Nik : </label>
+        <br>
+        <textarea name="" id="" cols="55" rows="0"></textarea>
+        <br>
+        <label for="">Nama Lengkap : </label>
+        <br>
+        <textarea name="" id="" cols="55" rows="0"></textarea>
+        <br>
+        <label for="">No telp : </label>
+        <br>
+        <textarea name="" id="" cols="55" rows="0"></textarea>
+        <br>
+        <label for="">Pengaduan : </label>
+        <br>
+        <textarea name="" id="" cols="55" rows="10"></textarea>
+        <br><br>
+        <label for="">Upload Gambar Terkait : </label>
+        <br><br>
+        <input type="file">
+        <br><br>
+        <button class="buttonpengaduan">Kirim</button>
+      </form>
     </div>
-    <br>
+    <div class="laporan" style="flex: 1; padding: 20px;">
+      <h3>Laporan</h3>
+      <div class="kotak-persegi-panjang">
+        <div class="rincian">
+          <p>ling</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo a mauris convallis lacinia nec
+            sed elit.</p>
+        </div>
+        <div class="gambar">
+          <img src="img/ling.jpg" alt="Gambar Terkait">
+        </div>
+      </div>
+      <div class="kotak-persegi-panjang">
+        <div class="rincian">
+          <p>ling</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo a mauris convallis lacinia nec
+            sed elit.</p>
+        </div>
+        <div class="gambar">
+          <img src="img/ling.jpg" alt="Gambar Terkait">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    Copyright &copy; 2023.
+  </footer>
+
 </body>
+
 </html>
