@@ -1,28 +1,28 @@
 <?php 
 $siswa = [
     [
-        "nama" => "fema",
+        "nama" => "Fema",
         "nis" => 11907154,
         "rombel" => "PPLG XI-2",
         "rayon" => "Cicurug 3",
         "umur" => 18,
     ],
     [
-        "nama" => "putri",
+        "nama" => "Putri",
         "nis" => 11907155,
         "rombel" => "PPLG XI-4",
         "rayon" => "Sukasari 4",
         "umur" => 16,
     ],
     [
-        "nama" => "andi",
+        "nama" => "Andi",
         "nis" => 11907156,
         "rombel" => "PPLG XI-5",
         "rayon" => "Cibedug 5",
         "umur" => 17,
     ],
     [
-        "nama" => "sugus",
+        "nama" => "Agus",
         "nis" => 11907157,
         "rombel" => "PPLG XI-6",
         "rayon" => "Ciawi 1",
@@ -49,7 +49,7 @@ $siswa = [
 
         <li>
             <div class="display: flex;" >
-            <label for="Suhu">Cari berdasarkan nama:</label>
+            <label for="name">Cari berdasarkan nama:</label>
             <input type="text" name="nama">
             <button type="submit" name="submit">Cari</button>
         </div>
@@ -61,7 +61,7 @@ $siswa = [
         <ol>
             <?php
        if(isset($_GET['cari'])){
-           foreach($siswa as $data_siswa) {
+           foreach ($siswa as $data_siswa) {
                if($data_siswa['umur'] >= 17) {
                 echo "<li>".$data_siswa['nama']. $data_siswa['umur']."</li>";
             }
@@ -74,9 +74,10 @@ $siswa = [
 
     <?php
         if(isset($_POST['submit'])) {
-            $nama = $_POST['nama'];
-            foreach ($siswa as $data_siswa) {
-                if($nama == $data_siswa['nama']) {
+            $nama = ($_POST['nama']);
+
+            foreach ($siswa as $key => $data_siswa) {
+                if ($nama == $data_siswa['nama'] || $nama == strtolower($data_siswa['nama'])) {
                     echo "<li>Nama : $nama |";
                     echo "Umur : $data_siswa[umur] |";
                     echo "NIS : $data_siswa[nis] |";
@@ -86,8 +87,6 @@ $siswa = [
             }
         }
     ?>
-
-
 </body>
 </html>
 
