@@ -89,6 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label for="cari_nama">Cari Siswa berdasarkan Nama:</label>
     <input type="text" id="cari_nama" name="cari_nama">
     <input type="submit" value="Cari">
+        <input type="submit" name="cari_umur" value="Cari yang sudah umur 17 tahun ke atas">
+</form>
 </form>
 
 <form method="post">
