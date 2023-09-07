@@ -14,7 +14,7 @@
             "harga" => 45000
         ],
         [
-            "judul" => "The invitation",
+            "judul" => "The Invitation",
             "min-usia" => 17,
             "harga" => 35000
         ],
