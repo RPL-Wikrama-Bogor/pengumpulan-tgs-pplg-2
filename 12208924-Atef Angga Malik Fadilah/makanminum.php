@@ -120,7 +120,7 @@
             <br>
             <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="post">
                 <div style="display: flex; padding-left: 20px;"><br>
-                    <p>Pilih Makanan : </p>
+                    <p>Pilih makanan : </p>
                         <select name="makanan" required>            
                             <option hidden disabled selected>--Pilih Makanan--</option>
                             <?php foreach($menus as $menu) : ?>
