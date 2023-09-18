@@ -16,7 +16,7 @@
     // Menentukan rata-rata
     $rataRata = round(array_sum($nilai) / count($nilai));
     
-    // Output hasil
+   
     echo "Nilai Saya : <b>" . $stringNilai . "</b><br>";
     echo "Dari keseluruhan nilai yang paling tinggi ialah : <b>" . $nilaiTerbesar . "</b><br>";
     echo "Sedangkan nilai yang paling kecil : <b>" . $nilaiTerkecil . "</b><br>";
