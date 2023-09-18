@@ -104,4 +104,4 @@ if (isset($hasil)) : ?>
 <?php endif; 
 ?>
 </body>
-</html>c:\Users\berli\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\37BB803FBA5C4ED939D68A30B1D0D867\WhatsApp Image 2023-09-18 at 10.29.23.jpg
+</html>
