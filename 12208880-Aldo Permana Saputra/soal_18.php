@@ -7,7 +7,6 @@ session_start();
 if (!isset($_SESSION['data_siswa'])) {
     $_SESSION['data_siswa'] = [];
 }
-//aldo
 
 // Fungsi untuk menambahkan data siswa ke dalam session
 function tambahDataSiswa($nama, $mtk, $indo, $ingg, $dpk, $agama, $kehadiran)
@@ -25,7 +24,7 @@ function tambahDataSiswa($nama, $mtk, $indo, $ingg, $dpk, $agama, $kehadiran)
 }
 
 // Jumlah siswa yang ingin dimasukkan
-$jumlah_siswa = 14;
+$jumlah_siswa = 15;
 
 if (isset($_POST['submit'])) {
     // Memeriksa apakah sudah ada 15 siswa dalam session
@@ -39,6 +38,8 @@ if (isset($_POST['submit'])) {
         $kehadiran = $_POST['kehadiran'];
 
         // Menambahkan data siswa ke dalam session
+
+        tambahDataSiswa($nama, $mtk, $indo, $ingg, $dpk, $agama, $kehadiran);
 
         echo "<h2>Data siswa berhasil disimpan.</h2>";
     } else {
