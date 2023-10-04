@@ -23,7 +23,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Peminjam</th>
                 <th scope="col">Jenis Barang</th>
-                <th scope="col">No Barang</th>
+                <th scope="col">Nomor Barang</th>
                 <th scope="col">Tanggal Meminjam</th>
                 <th scope="col">Tanggal Kembali</th>
                 <th scope="col">Status</th>
