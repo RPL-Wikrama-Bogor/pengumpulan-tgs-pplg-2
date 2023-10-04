@@ -56,9 +56,12 @@
                         } ?>
                     </td>
                     <td>
+                    <?php if ($row['status'] == 'Sudah Kembali') { ?>
+                        <a href="<?= BASE_URL ?>/book/hapus/<?= $row['id'] ?>" class="btn btn-danger"onclick="return confirm('Hapus data?')">Hapus</a>
+                        <?php } else { ?>
                         <a href="<?= BASE_URL ?>/book/edit/<?= $row['id'] ?>" class="btn btn-primary">Edit</a>
-                        <a href="<?= BASE_URL ?>/book/hapus/<?= $row['id'] ?>" class="btn btn-danger"
-                            onclick="return confirm('Hapus data?')">Hapus</a>
+                        <a href="<?= BASE_URL ?>/book/hapus/<?= $row['id'] ?>" class="btn btn-danger"onclick="return confirm('Hapus data?')">Hapus</a>
+                            <?php } ?>
                     </td>
                 </tr>
                 <?php $no++; endforeach; ?>
