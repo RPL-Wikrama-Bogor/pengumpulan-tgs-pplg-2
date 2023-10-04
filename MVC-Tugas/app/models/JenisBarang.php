@@ -50,13 +50,14 @@ class JenisBarang{
             $data['status'] = 'Belum Kembali';
         }
 
-        $query = "UPDATE tb_peminjaman SET nama_peminjaman=:nama_peminjaman, jenis_barang=:jenis_barang, no_barang=:no_barang, tgl_pinjam=:tgl_pinjam, status=:status WHERE id=:id";
+        $query = "UPDATE tb_peminjaman SET nama_peminjaman=:nama_peminjaman, jenis_barang=:jenis_barang, no_barang=:no_barang, tgl_pinjam=:tgl_pinjam, tgl_kembali=:tgl_kembali, status=:status WHERE id=:id";
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
         $this->db->bind('nama_peminjaman', $data['nama_peminjaman']);
         $this->db->bind('jenis_barang', $data['jenis_barang']);
         $this->db->bind('no_barang', $data['no_barang']);
         $this->db->bind('tgl_pinjam', $data['tgl_pinjam']);
+        $this->db->bind('tgl_kembali', $data['tgl_kembali']);
         $this->db->bind('status', $data['status']);
         $this->db->execute();
 

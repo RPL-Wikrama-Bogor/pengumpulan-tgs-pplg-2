@@ -17,7 +17,7 @@
         </select>
         </div>
         <div class="form-group mb-3" >
-            <label for="no_barang"> no barang</label>
+            <label for="no_barang">no barang</label>
             <input type="number" class="form-control" name="no_barang" id="no_barang" value="<?= $data['barang']['no_barang'] ?>">
         </div>
         <div class="form-group mb-3" >
@@ -30,7 +30,19 @@
         </div>
     </div>
     <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
     </div>
     </form>
 </div>
+
+<script>
+    document.getElementById("tgl_kembali").addEventListener("change", function() {
+        var tglPinjam = new Date(document.getElementById("tgl_pinjam").value);
+        var tglKembali = new Date(this.value);
+
+        if (tglKembali < tglPinjam) {
+            alert("Tanggal kembali tidak boleh lebih kecil dari tanggal pinjam. Silakan pilih tanggal kembali yang valid.");
+            this.value = "";
+        }
+    });
+</script>

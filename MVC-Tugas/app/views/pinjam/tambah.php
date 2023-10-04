@@ -24,7 +24,6 @@
             <label for="tgl_pinjam">tgl pinjam</label>
             <input type="datetime-local" class="form-control" name="tgl_pinjam" id="tgl_pinjam" value="">
         </div>
-            <!-- <option value="tgl_kembali" selected hidden></option>     -->
     </div>
     <div class="card-footer">
         <button type="submit" class="btn btn-primary">Submit</button>
