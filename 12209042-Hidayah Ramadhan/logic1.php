@@ -22,7 +22,7 @@ class DataMotor
     // mengatur harga motor-motor yang disewakan    
     public function setHarga($Nmax, $Aerox, $Vario) {
         $this->hargaNmax = $Nmax;
-        $this->hargaAerox = $Aerox;1
+        $this->hargaAerox = $Aerox;
         $this->hargaVario = $Vario;
     }
 

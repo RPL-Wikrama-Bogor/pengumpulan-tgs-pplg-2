@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="jumbroton py-4 px-5">
+        <h1 class="display-4">Selamat datang!</h1>
+        <hr class="my-4">
+        <h3>Inventaris Alat Pembelajaran</h3>
+        <br>
+        <h5>Peraturan Peminjaman</h5>
+        <ol>
+        <li>Menemui Petugas inventaris ketika akan meminjam dan mengembalikan barang</li>
+        <li>Lama waktu peminjaman hanya 2 hari</li>
+        <li>Menyerahkan kartu identitas ketika melkukan peminjaman sebagai jaminan</li>
+        </ol>
+
+    </div>
+</div>
