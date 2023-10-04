@@ -52,10 +52,10 @@
                 </td>
                 <td>
                     <?php if ($row['status'] == 'sudah kembali') : ?>
-                    <a href="<?= BASE_URL ?>/barang/hapus/<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="las la-trash">Hapus</i></a>
+                    <a href="<?= BASE_URL ?>/barang/hapus/<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="las la-trash">HAPUS</i></a>
                     <?php else : ?>
                 <a href="<?= BASE_URL ?>/barang/edit/<?= $row['id'] ?>" class="btn btn-primary">edit</a>
-                <a href="<?= BASE_URL ?>/barang/hapus/<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('hapus data?');"></a>
+                <a href="<?= BASE_URL ?>/barang/hapus/<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('hapus data?');">HAPUS</a>
                 <?php endif; ?>
                </td>
             </tr>
