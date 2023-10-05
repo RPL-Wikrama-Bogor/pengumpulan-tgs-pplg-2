@@ -57,7 +57,7 @@
     if (isset($_POST['submit'])) {
         $nama = $_POST['nama'];
         foreach ($names as $data_siswa) {
-            //untuk mencari indeks (posisi) pertama kali kemunculan suatu substring dalam sebuah string. 
+            //untuk mencari indeks (posisi) pertama kali kemunculan suatu substring dalam sebuah string . 
             //Substring adalah sebagian dari sebuah string yang merupakan urutan karakter yang lebih pendek yang terdapat dalam string yang lebih panjang. 
             if (stripos(strtolower($data_siswa["nama"]), $nama) !== false) {
                 echo "<h2>Informasi Siswa</h2>";
