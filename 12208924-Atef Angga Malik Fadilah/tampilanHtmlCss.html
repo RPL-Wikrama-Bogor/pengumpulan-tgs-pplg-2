@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Html Css</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Poppins';
+            background-color: lightyellow;
+            padding: 10px;
+        }
+        span{
+            color: orange;
+        }
+        .button{
+            float: right;
+            background-color: orange;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .content{
+            padding: 20px;
+            clear: right;
+            margin-bottom: 100px;
+        }
+        .text{
+            float: left;
+            width: 50%;
+            margin-bottom: 12rem;
+        }
+        .image{
+            width: 50%;
+            float: right;
+        }
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .baris{
+            display: inline-table;
+            padding: 20px;
+           justify-content: center;
+           margin-top: 4rem;
+
+        }
+        .kolom{
+        margin: 200px;
+        width: 280px;
+        max-width: 500%;
+        height: 120px;
+        background-color: orange;
+        margin: 3px;
+        box-sizing: border-box;
+		padding: 10px;
+        padding-left: -10px;
+        float: left;
+        text-align: center;
+        padding-top: 35px;
+        border-radius: 5px;
+      }
+      input[type]{
+        width: 400px;
+        height: 25px;
+        border: 0;
+        border-radius: 10px;
+      }
+      form{
+        margin-top: -3rem;
+        background-color: lightgray;
+        width: 400px;
+        margin-left: 1rem;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      h4{
+        width: 100%;
+        background-color: orange;
+    }
+    @media (max-width:1000px){
+        .kolom{
+            width: 250px;
+        }
+        .baris{
+            margin-top: -10rem;
+        }
+        form{
+            width: 80%;
+            font-size: 15px;
+            
+        }
+        input[type]{
+            width: 100%;
+        }
+    }
+    @media (max-width:720px){
+        h1{
+            font-size: 20px;
+            margin-top: -1.5rem;
+        }
+        li{
+            font-size: 13px;
+            margin-left: -1rem;
+        }
+        .baris{
+            margin-top: -10rem;
+            margin-left: 1rem;
+        }
+        .kolom{
+            width: 250px;
+            height: 100px;
+            font-size: 15px;
+            padding-bottom: 1rem;
+        }
+        form{
+            width: 80%;
+            font-size: 10px;
+            
+        }
+        input[type]{
+            width: 100%;
+        }
+        .button{
+            width: 60px;
+            font-size: 10px;
+        }
+        .image{
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        img{
+            max-width: 100%;
+        }
+        .text{
+            width: 100%;
+        }
+      }
+      @media (max-width:440px){
+        .kolom{
+            width: 200px;
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <a href="#" class="button">Administrasi</a>
+    <div class="content">
+        <div class="image">
+            <img src="bogor.jpg" alt="">
+        </div>
+        <div class="text">
+            <h1>Selamat <span>Siang </span>Barudak</h1>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nesciunt cupiditate autem sint.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laboriosam exercitationem tempora vero.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut officiis ratione veritatis.</li>
+            </ul>
+        </div>
+    </div><br>
+    <section class="baris">
+        <div class="kolom">Jumlah Kecamatan<br>15</div>
+        <div class="kolom">Jumlah Desa<br>42</div>
+        <div class="kolom">Jumlah Penduduk<br>12.000</div>
+        <div class="kolom">Data Per Tahun<br>2023</div>
+   </section>
+   <footer class="footer">
+        <h3><center>Laporan Pengaduan</center></h3>
+        <div>
+            <form action="" method="post">
+                <label for="nik">NIK : </label><br>
+                <input type="number" name="nik" id="nik"><br><br>
+                <label for="nama">Nama Lengkap : </label><br>
+                <input type="text" name="nama" id="nama"><br><br>
+                <label for="notelp">No Telp : </label><br>
+                <input type="number" name="notelp" id="notelp"><br><br>
+                <label for="pengaduan">Pengaduan : </label><br>
+                <input type="text" class="pengaduan" name="pengaduan" id="pengaduan" style="height: 150px;"><br><br>
+                <label for="gambar">Upload Gambar Terkait : </label><br>
+                <input type="file" name="gambar" id="gambar"><br>
+                
+                <button class="button" type="submit" name="submit">Kirim</button><br><br>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>
