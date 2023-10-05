@@ -52,7 +52,7 @@
             </li>
         </ul>
     </form>
-
+    
     <?php
     if(isset($_GET['cari'])){
         foreach($siswa as $key => $data_siswa){
