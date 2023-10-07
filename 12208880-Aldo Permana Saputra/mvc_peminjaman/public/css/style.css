@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jumbotron p{
+    font-size: 19.6px;
+    font-weight: 500;
+}
+
+
+.navbar{
+    background-color: rgb(49, 100, 254);
+}
+
+.container a{
+    color: white;
+}
+
+.navbar-brand{
+    color: white;
+    font-weight:390;
+
+}
+
