@@ -27,10 +27,10 @@ echo "Apabila dibulatkan, rata-rata dari keseluruhan nilai saya menjadi: <b> " .
 
 // Mencari indeks nilai 72 dan menggantinya dengan 75
 // mencari item pada array dan menghasilkan indexnya
-// $key = array_search(72, $nilai);
-// if ($key !== false) {
-// $nilai[$key] =75;
-// }
+ $key = array_search(72, $nilai);
+ if ($key !== false) {
+ $nilai[$key] =75;
+ }
 $nilaiSaya = [80, 78, 72, 84, 92, 88];
 $nilaiSaya[2] = 75;
 echo " Setelah melakukan perbikan, nilai saya menjadi: <b> " . implode(', ', $nilaiSaya) . "</b> <br>";
