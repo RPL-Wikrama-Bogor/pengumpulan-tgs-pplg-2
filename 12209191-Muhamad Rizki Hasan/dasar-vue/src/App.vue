@@ -1,5 +1,5 @@
 <template>
-  <h1 class="h1">Belajar VueJS 😁</h1>
+  <h1 class="h1">Belajar VueJS</h1>
   <p>-------Templating-------</p>
   {{ nama }}
   {{ number }}
@@ -122,3 +122,4 @@
     color: blue;
   }
 </style>
+
