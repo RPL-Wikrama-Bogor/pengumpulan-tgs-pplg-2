@@ -1,12 +1,12 @@
 <template>
 
-  <p>-----------templating------------</p>
+  <p>-----------templating ------------</p>
   {{ nama }}
   {{ absen }}
   <div v-html="kelas"></div>
 
   <p>-----------data binding----------------------</p>
-  <button :disabled="nonaktif">button</button>
+  <button :disabled="nonaktif">Button</button>
   <h1 v-bind="property">hann</h1>
   <input :type="typeInput" v-model="nama">
 
