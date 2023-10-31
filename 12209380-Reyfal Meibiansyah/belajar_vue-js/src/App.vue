@@ -2,6 +2,7 @@
   <p>----------------templating---------------</p>
   {{ nama }}
   {{ number }}
+  <!-- fungsi v-html atau bisa di ganti :,berfungsi untuk menampilkan tag html -->
   <div v-html="kelas"></div>
   <p>----------------data-Binding---------------</p>
   <button :disabled="nonaktif">button</button>
@@ -48,12 +49,42 @@
   <p>----------------V-model---------------</p>
   <input type="text" v-model="inputKelas">
   {{ inputKelas }}
+  <p>----------------latihan todolist---------------</p>
+  <div>
+    <input type="text" placeholder="masukkan nama" v-model="formDataKelas.nama">
+    <br>
+    <input type="text" placeholder="masukkan kelas" v-model="formDataKelas.kelas">
+    <br>
+    <button @click="tambahKelas">Tambah Siswa</button>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+      </tr>
+      <tr v-for="(murid,index) in dataKelas" :key="index">
+        <td>{{ index + 1 }}</td>
+        <td>{{ murid.nama }}</td>
+        <td>{{ murid.kelas }}</td>
+        <td><button @click="hapusDataKelas(murid.id)">Hapus</button></td>
+      </tr>
+    </table>
+  </div>
  </template>
 
  <script>
  export default{
    data(){
      return{
+      dataKelas: [{
+        nama: 'radit',
+        kelas: '10'
+      }],
+      formDataKelas: {
+        nama:'',
+        kelas:''
+      },
+      
       inputKelas:'',
       daftarKelas:['PPLG 1','PPLG 2','PPLG 3'],
       isActive: true,
@@ -75,6 +106,19 @@
      }
    },
    methods: {
+    tambahKelas() {
+      this.formDataKelas.id = Date.now();
+
+      this.dataKelas.push(this.formDataKelas);
+      this.formDataKelas = {
+        nama:'',
+        kelas:''
+      }
+    },
+    hapusDataKelas(id) {
+      this.dataKelas = this.dataKelas.filter(item => item.id != id);
+    },
+  
     counterNumber(){
       this.counterButton += 1
     },
@@ -90,9 +134,9 @@
       this.isActive = false;
     }else {
           this.isActive = true;
-    }
+  }
    }
-
+   
    },
    computed: {
       countComputed(){
