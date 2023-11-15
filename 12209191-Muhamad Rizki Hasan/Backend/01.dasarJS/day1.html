@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Javascript</title>
+</head>
+<body>
+    <!-- <script src="server.js"></script> -->
+    <script>
+        // A. Tipe Data
+        // 01. Tipe Data Biasa
+        // a. Tipe data integer & number
+        let number = 10
+        console.log(number);
+
+        // b. Tipe data string
+        var text1 = 'Ini text pertama menggunakan single quotes'
+        console.log(text1);
+        let text2 = "Ini text kedua menggunakan double quotes"
+        console.log(text2);
+        const text3 = `Ini adalah value dari number = ${number}`
+        console.log(text3);
+
+        // c. Tipe data boolean
+        let boolean = true
+        console.log(boolean);
+
+        // 02. Tipe data khusus
+        // a. Null
+        let tidakAdaNilai = null
+        console.log(tidakAdaNilai);
+
+        // b. Undifened
+        let nilaiBelumDiisi
+        console.log(nilaiBelumDiisi);
+
+        // c. Symbol
+        let simbol = Symbol('deskripsi-simbol')
+        console.log(simbol);
+
+        // d. Array
+        let array = ['apel', 'semangka', 'jeruk']
+        console.log(array[0]);
+
+        // e. Function
+        function tambah(a, b) {
+            console.log(a + b);
+        }
+        tambah(10, 5)
+
+        // 03. Tipe data referensi
+        // a. Objek
+        let siswa = {
+            nama: "Ikyy",
+            usia: 15,
+            asal: "Benda"
+        }
+        console.log(siswa);
+
+        // B. Operator
+        // 01. Operator Aritmatika
+        let number1 = 10
+        let number2 = 4
+        console.log(number1 + number2);
+        console.log(number1 - number2);
+        console.log(number1 * number2);
+        console.log(number1 / number2);
+        console.log(number1 % number2);
+
+        // 02. Operator Perbandingan
+        console.log(number1 == number2);
+        console.log(number1 != number2);
+        console.log(number1 < number2);
+        console.log(number1 > number2);
+        console.log(number1 >= number2);
+        console.log(number1 <= number2);
+        
+        // 03. Operator Logika
+        console.log(number1 != number2 && number1 > number2);
+        console.log(number1 == number2 || number1 != number2);
+        
+        // 04. Operator Penugasan
+        console.log(number1 = number1 + number2)
+        console.log(number1 += number2)
+        
+        // 05. Operator Null Checking
+        let object = null
+        let cekObject = object?.nama
+        console.log(cekObject);
+        
+        // 06. Operator Kondisional
+        let cekUmur = (siswa.usia >= 18) ? 'Dewasa' : 'Anak-anak'
+        console.log(cekUmur);
+        
+        if (siswa.usia >= 18) {
+            console.log("Dewasa");
+        } else if (siswa.usia >= 12) {
+            console.log("Remaja");
+        } else {
+            console.log("Anak-anak");
+        }
+
+        switch (siswa.asal) {
+            case "Benda":
+                console.log("Rumah");
+                break;
+            case "SMK Wikrama":
+                console.log("Sekolah");
+                break;
+            default:
+                console.log("Umum");
+        }
+    </script>
+</body>
+</html>

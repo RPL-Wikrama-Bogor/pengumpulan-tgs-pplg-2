@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soal Products</title>
+    </head>
+    <body>
+        <script>
+        // Buatlah fungsi js yg menggunakan map untuk mengembalikan daftar barang dengan harga diskon 10%
+        let products = [
+            {
+                name: "Laptop",
+                price: 1000,
+            },
+            {
+                name: "Smartphone",
+                price: 500,
+            },
+            {
+                name: "Tablet",
+                price: 300,
+            },
+        ];
+        
+        let diskon = products.map((products) =>  products.price * 0.9 );
+        let i = 0
+        products.forEach((products) => console.log(`${products.name} seharga $${diskon[i++]}`))
+
+        // let diskon = products.map(products => ({ name: products.name, price: products.price * 0.9 }));
+        // diskon.forEach(products => { 
+        //     console.log(`${products.name} seharga $${products.price}`
+        // )});
+
+        // Buatlah fungsi js untuk menyatukan array products dan newProducts lalu tampilkan rata-rata harganya
+        const newproducts = [
+            {
+                name: "Kulkas",
+                price: 200
+            },
+            {
+                name: "Tv",
+                price: 300
+            },
+        ];
+
+        let allProducts = products.concat(newproducts)
+        // let sumProducts = allProducts.map((allProducts) => allProducts.price(allProducts.price))
+        let price
+        let sumProducts = allProducts.forEach((allProducts) => price += allProducts.price)
+        console.log(sumProducts);
+    </script>
+</body>
+</html>
