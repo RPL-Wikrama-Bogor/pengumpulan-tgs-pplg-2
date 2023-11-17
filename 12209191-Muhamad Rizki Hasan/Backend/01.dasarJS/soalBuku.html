@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Buatlah sebuah fungsi javascript yang menggunakan filter untuk menampilkan daftar buku dengan genre "fiction"
+        const books = [
+            {
+                title: "Harry Potter",
+                author: "J.K Rowling",
+                genre: "Fantasy",
+                year: 1997
+            },
+            {
+                title: "To Kill a MockBird",
+                author: "Harper Lee",
+                genre: "Fiction",
+                year: 1960
+            },
+            {
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                genre: "Fiction",
+                year: 1925
+            },
+        ];
+
+        // Menggunakan if
+        // let fictionBooks = books.filter(function(books) { 
+        //     if (books.genre === "Fiction") {
+        //         console.log(books.title)  
+        //     } 
+        // });
+
+        // Menggunakan map
+        // let fictionBooks = books.filter((books) => books.genre == "Fiction")
+        // let titleGenre = fictionBooks.map((book) => book.title)
+        // console.log(fictionBooks);
+        
+        // Menggunakan foreach
+        let fictionBook = books.filter((books) => books.genre == "Fiction")
+        fictionBook.forEach((fictionBook) => console.log(fictionBook.title))
+    </script>
+</body>
+</html>

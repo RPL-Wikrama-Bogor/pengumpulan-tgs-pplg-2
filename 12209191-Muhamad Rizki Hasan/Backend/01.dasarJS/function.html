@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        // A. Function
+        // 01. Pure Function
+        let varNama = "Ikyy"
+        function printText(nama) {
+            console.log("Hello World! Nama Saya " + nama);
+        }
+        printText(varNama)
+
+        // 02. Arrow Function
+        let printText2 = (nama) => {
+            console.log("Hello World! Nama Saya " + nama);
+        }
+        printText2(varNama)
+
+        // 03. First-class Function & nilai default parameter
+        let printHello = function printText(nama = "Pengunjung") {
+            console.log("Hello World! Nama Saya " + nama);
+        }
+        printHello()
+
+        let harga = 1000
+        let margin
+        let hargaJuall = harga + (margin || 500)
+        let hargaJual2 = harga + (margin ?? 500)
+        console.log(hargaJuall);
+        console.log(hargaJual2);
+
+        // 01. Map
+        let angka = [1, 2, 3, 4, 5]
+        let angkaBaru = angka.map((angka) => angka * 2)
+        console.log(angkaBaru);
+
+        // 02. Filter
+        let angkaGanjil = angka.filter((angka) => angka % 2 === 1)
+        console.log(angkaGanjil);
+
+        // 03. Reduce
+        let sumAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log(sumAngka);
+
+        // 04. ForEach
+        let buah = ['apel', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        // 05. Sort
+        let huruf = ['c', 'b', 'a', 'z']
+        huruf.sort()
+        console.log(huruf);
+        
+        // 06. Find
+        let hasil = huruf.find((hasil) => hasil === 'z')
+        console.log(hasil);
+    </script>
+</body>
+</html>
