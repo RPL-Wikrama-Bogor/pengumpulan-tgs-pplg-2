@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="getBooks"></div>
+
+    <form id="addBook">
+        <h5>Add Book</h5>
+        <input type="text" id="name" name="name" placeholder="Masukan nama" required>
+        <input type="text" id="author" name="author" placeholder="Masukan authtor" required>
+        <input type="text" id="year" name="year" placeholder="Masukan year" required>
+        <input type="number" id="halaman" name="halaman" placeholder="Masukan halaman" required>
+        <input type="text" id="publisher" name="publisher" placeholder="Masukan publisher" required>
+        <input type="submit" value="kirim">
+    </form>
+
+    <script>
+        const url = "http://localhost:2327"
+    </script>
+    <script src="./javascript/getBooks.js"></script>
+    <script src="./javascript/addBook.js"></script>
+</body>
+
+</html>

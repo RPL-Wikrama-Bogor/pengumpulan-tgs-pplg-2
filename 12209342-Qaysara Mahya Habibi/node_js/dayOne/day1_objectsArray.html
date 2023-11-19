@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ARRAY
+        const fruits = new Array('Apel', 'Semangka', 'Mangga')
+        console.log(fruits)
+        // menambah element pada array
+        fruits.push("jeruk")
+        console.log(fruits)
+        // menghapus element terakhir pada array
+        fruits.pop()
+        console.log(fruits)
+        // menghapus element pertama pada array
+        fruits.shift()
+        console.log(fruits)
+        // Menambah,mengubah, dan menghapus element di tengah array
+        fruits.splice(1,0 ,"Melon")
+        console.log(fruits)
+
+        //menghitung jumlah panjang array
+        console.log(fruits.length)
+        
+        //mengembalikan nilai index element
+        console.log(fruits.indexOf('Mangga'))
+        console.log(fruits.indexOf('Semangka')) //mencari nilai indexnya, jika elemnt tidak ditemukan akan bernilai -1
+
+        const numbers = [0,1,2,3,4]
+        //membuat salinan potongan array
+        const newNumbers = numbers.slice(2,4)
+        console.log(newNumbers)
+
+        //menggabungkan dua array
+        const fruits2 = ['Lengkeng', 'Anggur']
+        const mergedFruits = fruits.concat(fruits2)
+        console.log(mergedFruits)
+
+        // OBJECTS
+        // Deklarasi Object
+        let person = {
+            name: 'Jeussynia',
+            age: '17',
+            isMarried: 'No'
+        }
+
+        //Akses Property
+        console.log(person.name) 
+        console.log(person['age'])
+        
+        //menghapus property object
+        console.log('Sebelum menghapus: ')
+        console.log(person)
+        delete person.isMarried
+        console.log('Setelah menghapus: ')
+        console.log(person)
+
+        //property shorthand -> untuk m
+        const jenis = 'Persegi'
+        const panjang = 30
+        const lebar = 30
+
+        const bangunDatar = {jenis, panjang, lebar}
+        console.log(bangunDatar)
+
+        //property Existence, emmeriksa properti dalam object
+        let student = {
+            name: "Eiar",
+            age: 18,
+            class: "RPL"
+        }
+
+        console.log("name" in student)
+        console.log("genre" in student)
+        console.log(student.hasOwnProperty("name"))
+        console.log(student.hasOwnProperty("genre"))
+
+
+
+    </script>
+</body>
+</html>
