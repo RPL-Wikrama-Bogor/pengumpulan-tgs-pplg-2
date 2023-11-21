@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=scr, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let varName = "ello"
+        function printText(name){
+            console.log("hello world! nama saya" +name)
+        }
+        printText(varName)
+
+        let printText2 = (name) => {
+            console.log("Hello world! nama saya "+name)
+        }
+        printText2(varName)
+
+        let printHello = function prinText(name = "pengunjung"){
+            console.log("Hello World! nama saya "+name);
+        }
+        printHello()
+
+        let harga =1000
+        let margin
+
+        let hargaJual1 = harga + (margin || 500)
+        let hargaJual2 = harga + (margin ?? 500)
+
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        let angka = [1, 2, 3, 4, 5]
+        let angkabaru = angka.map((angka) => angka *2)
+        console.log(angkabaru)
+
+        let angkaGanjil = angka.filter((angka) => angka % 2 === 1)
+        console.log(angkaGanjil)
+
+        let number1 = 1
+        let text1  = "1"
+
+        console.log(number1 == text1)
+        console.log(number1 === text1)
+
+        let sumAngka = angka.reduce((accumulator, currentvalue) => accumulator + currentvalue, 0)
+        console.log(sumAngka)
+
+        let buah = ['appel', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        let huruf = ['c', 'b', 'a', 'z']
+        huruf.sort()
+        console.log(huruf)
+
+        let hasil = huruf.find((hasil) => hasil === 'z')
+        console.log(hasil)
+
+    </script>
+</body>
+</html>
