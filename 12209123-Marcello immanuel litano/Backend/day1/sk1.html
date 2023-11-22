@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //buatlah sebuah fungsi js yang menggunakan filter untuk mengembalikkan/menampilkan daftar buku dengan genre "fiction"
+
+        const books = [
+            {
+                title: "Harry Potter and the Sorcerer's Stone ",
+                author: "JK, Rowling",
+                genre: "fantasy",
+                year: 1967
+            },
+            {
+                title: "To kill a Mockingbird ",
+                author: "Harper Lee",
+                genre: "fiction",
+                year: 1960
+            },
+            {
+                title: "The Great Gatsby ",
+                author: "F. Scoot fitzgerald",
+                genre: "fiction",
+                year: 1975
+            }
+        ] 
+
+        let genreFiction = books.filter((books) => books.genre == "fiction")
+        console.log(genreFiction)
+
+    </script>
+</body>
+</html>
