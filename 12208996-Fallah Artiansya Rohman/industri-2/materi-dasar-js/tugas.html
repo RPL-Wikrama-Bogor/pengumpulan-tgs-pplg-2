@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = [
+            {
+                name: "Laptop",
+                price: 1000,
+            },
+            {
+                name: "Smartphone",
+                price: 500,
+            },
+            {
+                name: "Tablet",
+                price: 300,
+            },
+        ];
+        // console.log("sekarang laptop seharga")
+
+        // let habisDiskon = products.map((products) => products.price * 0.1 )
+        // habisDiskon.forEach((habisDiskon) => console.log('Laptop seharga ${habisDiskon})') )
+
+        // console.log(habisDiskon)
+        // function applyDiscount(products) {
+        //     const productsWithDiscount = products.map((products) => {
+        //         const discountedPrice = products.price * 0.9;
+        //         return {
+        //             name: products.name,
+        //             price: discountedPrice
+        //         };
+        //     });
+        //     return productsWithDiscount
+        // }
+
+        // const productsWithDiscount = applyDiscount(products);
+        // console.log(productsWithDiscount);
+        let hargaDiskon = products.map((products) => products.price * 0.9 )
+        console.log(hargaDiskon)
+        let x = 0
+        hargaDiskon = products.filter((products) => products.price = hargaDiskon[x++])
+        products.forEach((products) => console.log(`${products.name} seharga $${hargaDiskon[x++]}`))
+    </script>
+</body>
+</html>
+
