@@ -19,6 +19,9 @@ class SuratController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search_input');
+        $page = $request->input('page');
+        $perPage = 5;
+
         $letters = DB::table('letters')
             ->join('letter_types', 'letter_types.id', '=', 'letters.letter_type_id')
             ->join('users', 'users.id', '=', 'letters.notulis')
@@ -30,9 +33,11 @@ class SuratController extends Controller
                 $query->orWhere('users.name', 'LIKE', "%$search%");
                 $query->orWhere('letters.recipients', 'LIKE', "%$search%");
             })
-            ->paginate(5);
+            ->paginate($perPage);
 
-        return view('data-surat.index', compact('letters'));
+        $perPage = (is_null($page) || $page == 1) ? 0 : $perPage;
+
+        return view('data-surat.index', compact('letters', 'perPage'));
     }
 
     public function create()

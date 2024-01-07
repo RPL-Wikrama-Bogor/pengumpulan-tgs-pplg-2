@@ -113,7 +113,7 @@
                 <table>
                     <tr>
                         <td style="width: 450px">
-                            <p>No: {{ $data->letterTypes->letter_code }}</p>
+                            <p>No: {{ $data->letterTypes->letter_code }}/003/SMK Wikrama/XII/2024</p>
                             <p>Hal: <b>{{ $data->letter_perihal }}</b></p>
                         </td>
                         <td>

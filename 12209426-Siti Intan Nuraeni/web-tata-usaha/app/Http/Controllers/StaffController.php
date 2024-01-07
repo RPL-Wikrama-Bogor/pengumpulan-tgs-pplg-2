@@ -12,15 +12,20 @@ class StaffController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('name');
+        $page = $request->input('page');
+        $perPage = 5;
+        
         $staff  = User::where("role", "staff")
             ->where('id', '!=', Auth::user()->id)
             ->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE' , "%$search%");
                 $query->orWhere('email', 'LIKE' , "%$search%");
             })
-            ->paginate(5);
+            ->paginate($perPage);
 
-        return view('data-staff-tata-usaha.index', compact('staff'));
+        $perPage = (is_null($page) || $page == 1) ? 0 : $perPage;
+
+        return view('data-staff-tata-usaha.index', compact('staff', 'perPage'));
     }
 
     public function create()

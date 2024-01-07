@@ -11,14 +11,19 @@ class GuruController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('name');
+        $page = $request->input('page');
+        $perPage = 5;
+
         $guru = User::where("role", "guru")
             ->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE' , "%$search%");
                 $query->orWhere('email', 'LIKE' , "%$search%");
             })
-            ->paginate(5);
+            ->paginate($perPage);
 
-        return view('data-guru.index', compact('guru'));
+            $perPage = (is_null($page) || $page == 1) ? 0 : $perPage;
+
+        return view('data-guru.index', compact('guru', 'perPage'));
     }
 
     public function create()

@@ -17,6 +17,9 @@ class SuratGuruController extends Controller
     {
         $search = $request->input('search_input');
 
+        $page = $request->input('page');
+        $perPage = 2;
+
         $letters = DB::table('letters')
             ->join('letter_types', 'letter_types.id', '=', 'letters.letter_type_id')
             ->join('users', 'users.id', '=', 'letters.notulis')
@@ -29,9 +32,12 @@ class SuratGuruController extends Controller
                 $query->orWhere('users.name', 'LIKE', "%$search%");
                 $query->orWhere('letters.recipients', 'LIKE', "%$search%");
             })
-            ->paginate(5);
+            ->paginate($perPage);
 
-        return view('data-surat-guru.index', compact('letters'));
+        $perPage = (is_null($page) || $page == 1) ? 0 : $perPage;
+
+
+        return view('data-surat-guru.index', compact('letters', 'perPage'));
     }
 
     public function create($id)

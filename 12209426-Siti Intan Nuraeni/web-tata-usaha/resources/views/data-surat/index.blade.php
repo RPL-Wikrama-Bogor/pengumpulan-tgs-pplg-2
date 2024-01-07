@@ -63,8 +63,8 @@
                         @php($number = 1)
                         @foreach ($letters as $value)
                             <tr>
-                                <td class="align-middle">{{ $number++ }}</td>
-                                <td class="align-middle">{{ $value->letter_code }}/003/SMK Wikrama/XII/2023</td>
+                                <td class="align-middle">{{ ($number++) + $perPage }}</td>
+                                <td class="align-middle">{{ $value->letter_code }}/003/SMK Wikrama/XII/2024</td>
                                 <td class="align-middle">{{ $value->letter_perihal }}</td>
                                 <td class="align-middle">{{ \Illuminate\Support\Carbon::parse($value->created_at)->format('d F Y') }}</td>
                                 <td class="align-middle">

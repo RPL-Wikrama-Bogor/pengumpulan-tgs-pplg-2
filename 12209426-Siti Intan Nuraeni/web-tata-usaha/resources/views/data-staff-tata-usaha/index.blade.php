@@ -55,7 +55,7 @@
                             @php($number = 1)
                             @foreach ($staff as $value)
                                 <tr>
-                                    <td class="align-middle">{{ $number++ }}</td>
+                                    <td class="align-middle">{{ ($number++) + $perPage }}</td>
                                     <td class="align-middle">{{ $value->name }}</td>
                                     <td class="align-middle">{{ $value->email }}</td>
                                     <td class="align-middle">{{ $value->role }}</td>
@@ -80,7 +80,6 @@
                             </tbody>
                         </table>
                     </div>
-
                     {!! $staff->withQueryString()->links() !!}
                 </div>
             </div>

@@ -15,11 +15,17 @@ class KlasifikasiSuratController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('name_type');
+        $page = $request->input('page');
+        $perPage = 5;
+
         $klasifikasi = LetterTypes::where('name_type','like',"%$search%")
             ->orWhere('letter_code','like',"%$search%")
-            ->get();
+            ->paginate($perPage);
 
-        return view('data-klasifikasi-surat.index', compact('klasifikasi'));
+            $perPage = (is_null($page) || $page == 1) ? 0 : $perPage;
+
+
+        return view('data-klasifikasi-surat.index', compact('klasifikasi', 'perPage'));
     }
 
     public function create()

@@ -59,7 +59,7 @@
                         @php($number = 1)
                         @foreach ($klasifikasi as $value)
                             <tr>
-                                <td class="align-middle">{{ $number++ }}</td>
+                                <td class="align-middle">{{ ($number++) + $perPage }}</td>
                                 <td class="align-middle">{{ $value->letter_code }}</td>
                                 <td class="align-middle">{{ $value->name_type }}</td>
                                 <td class="align-middle">{{ $value->letters->count()}}</td>
@@ -83,6 +83,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                {!! $klasifikasi->withQueryString()->links() !!}
             </div>
         </div>
     </div>

@@ -55,7 +55,7 @@
                         @php($number = 1)
                         @foreach ($letters as $value)
                             <tr>
-                                <td class="align-middle">{{ $number++ }}</td>
+                                <td class="align-middle">{{ ($number++) + $perPage }}</td>
                                 <td class="align-middle">{{ $value->letter_code }}</td>
                                 <td class="align-middle">{{ $value->letter_perihal }}</td>
                                 <td class="align-middle">{{ \Carbon\Carbon::parse($value->created_at)->format('d F Y') }}</td>
