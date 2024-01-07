@@ -39,6 +39,11 @@ Daftar library yang digunakan didalam aplikasi ini sebagai berikut :
   php artisan key:generate
   ```
 
+- Move Storage to public (untuk mengakses gambar yang di upload di local storage)
+  ```bash
+  php artisan storage:link
+  ```
+
 - Build Assets (untuk mengcompile styling scss to css agar dapat dibaca browser)
   ```bash
   npm install & npm run dev
