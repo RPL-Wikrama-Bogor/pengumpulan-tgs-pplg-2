@@ -9,7 +9,6 @@
 
     <title>Pengelolaan Surat | @yield('title')</title>
     <link rel="icon" href="{{ asset('favicon.png') }}" sizes="32x32" type="image/png">
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap-icons-1.11.2/font/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     @stack('css')

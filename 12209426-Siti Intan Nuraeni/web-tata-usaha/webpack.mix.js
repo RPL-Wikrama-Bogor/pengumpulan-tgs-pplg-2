@@ -11,6 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
+// copy bootstrap icons to public/fonts/bootstrap-icons 
+mix.copyDirectory('node_modules/bootstrap-icons/font/fonts', 'public/fonts/bootstrap-icons');
+
 mix.js('resources/js/app.js', 'public/js')
 	.sass('resources/sass/app.scss', 'public/css')
 	.sourceMaps();
