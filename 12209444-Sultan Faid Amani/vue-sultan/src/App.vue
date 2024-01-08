@@ -1,101 +1,62 @@
 <template>
-  <div>
-    <p>----------------templating---------------</p>
-    {{ nama }}
-    {{ number }}
-    <div v-html="kelas"></div>
-    <p>----------------data-Binding---------------</p>
-    <button :disabled="nonaktif">button</button>
-    <h1 :class="property.class">Sultan</h1>
-    <input :type="type">
-    <p>----------------data-Binding---------------</p>
-    {{ count + 1 }}
-    {{ count === 0 ? count + 1 : count + 2 }}
-    <p>----------------v-if---------------</p>
-    <button v-if="show">Submit</button>
-
-    <div v-if="count === 1">
-      number 1
-    </div>
-
-    <div v-else-if="count === 2">
-      number 2
-    </div>
-
-    <div v-else>
-      lebih dari 2
-    </div>
-
-    <p>----------------completed and method---------------</p>
-    <button @click="counterNumber">methods {{ counterButton }}</button>
-    <button @click="countComputed">Computed {{ numberComputed }}</button>
-    <input :type="typeInput">
-    <button @click="showPassword">show password</button>
-    <p>----------------class and style---------------</p>
-    <ul>
-      <li :class="{ active: isActive, fs40px: isActive }">
-        test
-      </li>
-    </ul>
-    <button @click="ubahWarna">Ubah Warna</button>
-    <p>----------------List Rendering---------------</p>
-    <ul>
-      <li v-for="(item, index) in daftarKelas" :key="index">
-        ({{ index + 1 }}) {{ item }}
-      </li>
-    </ul>
+  <div class="row-service">
+  <Card v-for="item in data" :title="item.title" :description="item.description"><p>{{ item.date }}</p></Card>
   </div>
+  <button class="btn-service">Detail</button>
+  <MyBtn id="btn1" name="btn"></MyBtn>
+  <MyBtn id="btn2" name="btn2"></MyBtn> 
 </template>
-
 <script>
-export default {
-  data() {
-    return {
-      daftarKelas: ['RPL 1', 'RPL 2', 'RPL 3'],
-      isActive: true,
-      typeInput: 'password',
-      counterButton: 0,
-      numberComputed: 0,
-      show: true,
-      count: 0,
-      nama: 'Sultan',
-      number: 30,
-      kelas: '<h1>PPLG XI-2</h1>',
-      nonaktif: false,
-      property: {
-        id: 1,
-        class: 'color',
-      },
-      type: 'password',
-    };
-  },
-  methods: {
-    counterNumber() {
-      this.counterButton += 1;
+  import Card from '@/components/my-components/Card.vue';
+  export default {
+    components: {
+      Card,
+      'card-service': Card
     },
-    showPassword() {
-      this.typeInput = this.typeInput === 'password' ? 'text' : 'password';
-    },
-    ubahWarna() {
-      this.isActive = !this.isActive;
-    },
-  },
-  computed: {
-    countComputed() {
-     this.numberComputed += 6;
-    },
-  },
-};
-</script>
+    data(){
+      return {
+        data: [
+          {
+            title: 'Anastasia',
 
+            description: "Anastasia (アナスタシア Anasutashia) is an idol available in THE iDOLM@STER Cinderella Girls and THE iDOLM@STER Cinderella Girls Starlight Stage. She's voiced by Sumire Uesaka (上坂すみれ Uesaka Sumire).",
+            
+            date: '31 Oktober 2023'
+          },
+          {
+            title: 'Athanasia De Alger Obelia',
+            description: "Athanasia de Alger Obelia is the main protagonist in Who Made Me a Princess, and the current Crown Princess of the Obelian Empire. After reading a romance fantasy novel named The Lovely Princess, the protagonist goes to sleep and finds herself reincarnated into the infant body of Athanasia,[5] a side character in the fictional novel who was executed by her father, Claude de Alger Obelia, for poisoning the beloved Princess Jennette Margarita.[6] In her new life, Athanasia is determined to avoid her fated execution and survive past the age of 18.[7]",
+            date: '31 Oktober 2023'
+            
+
+          }
+        ]
+      }
+    }
+  }
+</script>
 <style>
-.color {
-  color: rebeccapurple;
+.row-service{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px ;
 }
-.fs40px {
-  font-size: 40px;
+
+.btn-service-global{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    background-color: blue;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
 }
-.active {
-  color: forestgreen;
+.btn-service-global:hover{
+    background-color: #343b4e;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.6s;
 }
+
 </style>

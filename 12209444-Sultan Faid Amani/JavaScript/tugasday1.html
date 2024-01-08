@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal</title>
+</head>
+<body>
+    <script>
+        const books = [
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: "J.K. Rowling",
+            genre: "Fantasy",
+            year: 1997
+        },
+        {
+            title: "To kill a Mockingbird",
+            author: "Harper Lee",
+            genre: "Fiction",
+            year: 1960
+        },
+        {
+            title: "The great Gatsby",
+            author: "F. Scott Fitzgerald",
+            genre: "Fantasy",
+            year: 1925
+        }
+        ]
+
+         for (let i = 0; i < books.length; i++) {
+            console.log(books[i].title);
+        }
+   
+        const products = [
+    {
+        name: "Laptop",
+        price: 1000
+    },
+    {
+        name: "SmartPhone",
+        price: 500
+    },
+    {
+        name: "Tablet",
+        price: 300
+    }
+];
+
+let hargaDiskon = products.map((products) => products.price * 0.9)
+let x = 0
+hargaDiskon = products.filter((products) => products.price = hargaDiskon[x++])
+hargaDiskon.forEach((hargaDiskon) => console.log(`${hargaDiskon.name} seharga $${hargaDiskon.price}`))  
+
+    </script>
+</body>
+</html>

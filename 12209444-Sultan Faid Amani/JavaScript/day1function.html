@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let varNama = "Gojo kiko"
+        function printText(nama){
+            console.log("Hello World nama saya " + nama)
+        }
+        printText(varNama)
+
+        let printText2 = (nama) => {
+            console.log("Hello world nama saya " + nama)
+        }
+
+        printText2(varNama)
+
+        let printHello = function printText(nama){
+            console.log("Hello world nama saya "+ nama)
+        }
+        printHello(varNama)
+
+        let harga = 1000
+        let margin
+        let hargaJual1 = harga + (margin || 500)
+        let hargaJual2 = harga + (margin ?? 900)
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        let angka  = [1,2,3,4,5]
+        let angkaGenap = angka.map((angka) => angka * 2)
+        console.log(angkaGenap)
+        
+        let angkaGanjil = angka.map((angka) => angka * 2 === 1)
+        console.log(angkaGanjil)
+
+        let number1 = 1
+        let text1 = "1"
+
+        console.log(number1 == text1)
+        console.log(number1 ===  text1)
+
+        let sumAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue)
+        console.log(sumAngka)
+
+        let buah = ['appel', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        let huruf = ['a','s','g','e','u','r','o','q']
+        huruf.sort()
+        console.log(huruf)
+
+        let hasil = huruf.find((hasil) => hasil == 'g')
+        console.log(hasil)
+
+        const _fruits = new Array('apple','Pisang','Mangga')
+        console.log(_fruits)
+        _fruits.push('jeruk')
+        console.log(_fruits)
+        _fruits.pop()
+        console.log(_fruits)
+        _fruits.shift()
+        console.log(_fruits)
+        
+        console.log(_fruits.length)
+
+        console.log(_fruits.indexOf('Pisang'))
+        console.log(_fruits.indexOf ('Mangga'))
+        
+        const _numbers = new Array(0,1,2,3,4,5)
+        const _newNumbers = _numbers.slice(2,4)
+        console.log(_newNumbers)
+
+        const _fruits2 = ['lengkeng', 'melon']
+        const _margedFruits = _fruits.concat(_fruits2)
+        console.log(_margedFruits)
+
+        let _person ={
+            name: 'Velma',
+            age: 16,
+            isMarried: false
+        }
+        
+        console.log(_person.name)
+        console.log(_person['age'])
+
+        console.log('Sebelum Menghapus')
+        console.log(_person)
+        delete _person.isMarried
+        console.log("Setelah Menghapus")
+        console.log(_person)
+
+        const _jenis = 'Persegi'
+        const _panjang = 30
+        const _lebar = 30
+
+        const _bangunDatar = {
+            _jenis,
+            _panjang,
+            _lebar,
+        }
+
+        console.log(_bangunDatar)
+
+        let _student = {
+            name: "Vilma Klarissa",
+            age: 60,
+            className: 'X IPA'
+        }
+
+        console.log("name" in _student)
+        console.log("genre" in _student)
+        console.log(_student.hasOwnProperty("name"))
+        console.log(_student.hasOwnProperty("genre"))
+    </script>
+</body>
+</html>
