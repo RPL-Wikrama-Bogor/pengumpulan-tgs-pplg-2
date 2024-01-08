@@ -5,17 +5,17 @@ Website belajar laravel di sekolah
 <h2 id="fitur">🧐 Fitur apa saja yang ada di website apotek ini?</h2>
 
 -   Landing Page
-    -   Halaman Login
+    -   Halaman login
     -   Dashboard
-    -   Data Staff Tata Usaha
-    -   Data Guru
-    -   Data Klasifikasi Surat
-    -   Data Surat
+    -   Data user
+    -   Data obat
+    -   Data stok
+    -   Data pembelian
 -   Authentication
     -   Login
     -   Logout
 -   Multi User
-    -   Staff TU
+    -   Admin
         -   Mengelola user (admin dan kasir)
         -   Mengelola data obat
         -   Mengelola data stok
