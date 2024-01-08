@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let varNama = "Rajib"
+        function printText(nama) {
+            console.log("Hello world! Nama saya :"+nama);
+        }
+        printText(varNama)
+
+        let printText2 = (nama) => {
+            console.log("Hello world! Nama saya :"+nama);
+        }
+        printText2(varNama)
+
+        let printHello = function printText(nama = "pengunjung"){
+            console.log("Hello world! Nama saya :"+nama);
+        }
+        printHello()
+
+        let harga = 1000
+        let margin
+        let hargaJual1 = harga + (margin || 500) 
+        let hargaJual2 = harga + (margin ?? 500) 
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        // operator ?? berfungsi untuk memberi nilai default. tapi untuk nilai yg masih kosong
+        // fungsi map() untuk membuat array baru
+
+        let angka = [1,2,3,4,5]
+        let angkaBaru = angka.map((angka) => angka * 2)
+        console.log(angkaBaru)
+
+        let angkaGanjil = angka.filter((angka) => angka % 2 === 1)
+        console.log(angkaGanjil)
+
+        let number1 = 1
+        let text1 = "1"
+
+        console.log(number1 == text1)
+        console.log(number1 === text1)
+
+        let sumAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        // sumReduce adalah 15  
+
+        let buah = ['apple', 'orange', 'pisang', 'semongko']
+        buah.forEach((buah) => console.log(buah))   
+
+        let huruf = ['s', 'h', 'o', 'l', 'e','h']
+        huruf.sort()
+        console.log(huruf)
+
+        let hasil = huruf.find((hasil) => hasil === 'o' )
+        console.log(hasil)
+
+
+        // array
+        const _fruits = new Array('apel', 'pisang', 'semanngka')
+        console.log(_fruits)
+
+        // menambahkan dan menghapus element dalam array
+
+        _fruits.push("jeruk") // menambahkan "jeruk" ke akhir array
+        console.log(_fruits)
+
+        _fruits.pop() // menghapus element terakhir dalam array
+        console.log(_fruits)
+
+        _fruits.shift() // menghapus element pertama dalam array
+        console.log(_fruits)
+
+        _fruits.splice(1,0, "melon") // menambahkan element di tengah array
+        console.log(_fruits)
+
+        // menghitung jumlah panjang array
+        console.log(_fruits.length)
+
+        // mengembalikan nilai index element
+        console.log(_fruits.indexOf('pisang'))
+        console.log(_fruits.indexOf('jeruk')) // jika tidak ditemukan akan bernilai -1
+
+        const _numbers =  new Array(0,1,2,3,4,5)
+        // membuat salinan potongan array
+        const _newNumber = _numbers.slice(2,4)
+        console.log(_newNumber)
+
+        // menggabungkan 2 array
+        const _fruits2 = ['lengkeng','nanas']
+        const _mergedFruits = _fruits.concat(_fruits2)
+        console.log(_mergedFruits)
+
+        // Deklarasi Object 
+        let _person = {
+            name: "John CHINESE",
+            age: 90,
+            isMaried: false
+        }
+
+        // akses properti
+        console.log(_person.name)
+        console.log(_person['age'])
+
+        // menghapus properti object
+        console.log('sebelum menghapus :')
+        console.log(_person)
+
+        delete _person.isMaried
+        console.log('setelah menghapus :')
+        console.log(_person)
+
+        // property Shorthand
+        const _jenis = 'persegi'
+        const _panjang = 30
+        const _lebar = 30
+
+        const _bangunDatar = {
+            _jenis, _panjang, _lebar
+        }
+        console.log(_bangunDatar)
+
+        // Property existance, memeriksa property dalam object
+        let _student = {
+            name: "johny cina",
+            age: 30,
+            className: 'rpl'
+        }
+
+        console.log("name" in _student)
+        console.log("genre" in _student)
+        console.log(_student.hasOwnProperty("name"))
+        console.log(_student.hasOwnProperty("genre"))
+    </script>
+    
+</body>
+</html>
