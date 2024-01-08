@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = 10;
+      var text1 = "Ini text pertama menggunakan singel quotes";
+      var text2 = "ini text kedua menggunakan double quotes";
+      const text3 = `ini text ketiga menggunakan BackTip`;
+      const text4 = `ini text ketiga menggunakan BackTip = ${number}`;
+
+      let boolean = true;
+
+      console.log(number);
+      console.log(text1);
+      console.log(text2);
+      console.log(text3);
+      console.log(text4);
+      console.log(boolean);
+      //1%2 sama kalo pake double quotes "'akan terprint'"
+      //null untuk menyatakan kalo variabel ini ga memiliki nilai
+      //undifind variabel ketika tidak ada nilai
+      //symbol
+      //arayy menyimpansejumlah tipe data sama
+      //function menjalankan kode data blok tertentu
+      let tidakAdaNilai = null;
+      console.log(tidakAdaNilai);
+
+      let nilaiBelumDiisi;
+      console.log(nilaiBelumDiisi);
+
+      let simbol = Symbol("deskripsi-simbol");
+      console.log(simbol);
+
+      let array = ["apel", "semangka", "jeruk"];
+      console.log(array[0]);
+
+      function tambah(a, b) {
+        console.log(a + b);
+      }
+
+      //objek menyimpan banyak nilai salah satu variabel contoh
+      let siswa = {
+        nama: "Atun",
+        usia: 16,
+        asal: "Wikrama",
+      };
+      console.log(siswa);
+
+      //operator
+      let number1 = 10;
+      let number2 = 4;
+      console.log(number1 + number2);
+      console.log(number1 - number2);
+      console.log(number1 * number2);
+      console.log(number1 / number2);
+      console.log(number1 % number2);
+
+      //perbandingan
+      console.log(number1 == number2);
+      console.log(number1 != number2);
+      console.log(number1 > number2);
+      console.log(number1 < number2);
+      console.log(number1 >= number2);
+      console.log(number1 <= number2);
+
+      //operator logika
+      console.log(number1 != number2 && number1 > number2);
+      console.log(number1 == number2 || number1 != number2);
+
+      //OPERATOR PENUGASAN
+      number1 = number1 + number2;
+      console.log(number1);
+      number1 += number2;
+      console.log(number1);
+
+      //OPERATOR NULL CHEKING
+      let object = null;
+      let cekObject = object?.nama;
+      console.log(cekObject);
+
+      //OPERATOR KONDISIONAL
+      let cekUmur = siswa.usia >= 18 ? "Dewasa" : "anak-anak";
+      console.log(cekUmur);
+
+      //IF else
+      if (siswa.usia >= 18) {
+        console.log("Dewasa");
+      } else if (siswa.usia >= 12) {
+        console.log("Remaja");
+      } else {
+        console.log("anak-anak");
+      }
+
+      //
+      switch (siswa.asal) {
+        case "Wikrama":
+          console.log("sekolah");
+          break;
+        case "SMK Wikrama":
+          console.log("tempat sekolah");
+        default:
+          console.log("Umum");
+      }
+    </script>
+  </body>
+</html>
