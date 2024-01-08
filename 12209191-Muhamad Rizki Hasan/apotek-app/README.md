@@ -21,7 +21,7 @@ Website belajar laravel di sekolah
         -   Mengelola data stok
         -   Mengelola data pembelian
     -   Kasir
-        -   Menambah pembelian
+        -   Menambah data pembelian
 -   Cari Data
 -   Export PDF
 -   Export Excel
