@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        {
+          title: "Harry Potter and the Sorcerer's Stone",
+          author: "J.K. Rowling",
+          genre: "Fantasy",
+          year: 1997,
+        },
+        {
+          title: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          genre: "Fiction",
+          year: 1960,
+        },
+        {
+          title: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          genre: "Fiction",
+          year: 1925,
+        },
+      ];
+
+      function getFictionBooks() {
+        const fictionBooks = books.filter((book) => book.genre === "Fiction");
+        return fictionBooks;
+      }
+      const fictionBooksList = getFictionBooks();
+      fictionBooksList.forEach((book) => {
+        console.log(book.title);
+      });
+
+      atun = "------------------------------";
+      console.log(atun);
+
+      const products = [
+        {
+          name: "Laptop",
+          price: 1000,
+        },
+        {
+          name: "Smartphone",
+          price: 500,
+        },
+        {
+          name: "Tablet",
+          price: 300,
+        },
+      ];
+
+      function applyDiscount(products) {
+        const discountedProducts = products.map((product) => {
+          const discountedPrice = product.price * 0.9;
+          return { product, price: discountedPrice };
+        });
+
+        return discountedProducts;
+      }
+
+      const discountedItems = applyDiscount(products);
+      discountedItems.forEach((product) => {
+        console.log(`${product.name} seharga $${product.price}`);
+      });
+
+      //buatlah fungsi java script untuk menyatukan array products dengan newProducts lalu tampilkan rata ratanya
+            console.log(atun)
+
+      const newProducts = [
+        {
+          name: "Kulkas",
+          price: 200,
+        },
+        {
+          name: "TV",
+          price: 300,
+        },
+      ];
+
+      function averageProductPrice(products, newProducts) {
+        const combinedProducts = [...products, ...newProducts];
+
+        
+        const totalPrices = combinedProducts.reduce(
+          (total, product) => total + product.price,
+          0
+        );
+
+        
+        const averagePrice = totalPrices / combinedProducts.length;
+
+        return averagePrice;
+      }
+
+      
+      const average = averageProductPrice(products, newProducts);
+      console.log("Rata-rata harga produk: " + average);
+    </script>
+  </body>
+</html>

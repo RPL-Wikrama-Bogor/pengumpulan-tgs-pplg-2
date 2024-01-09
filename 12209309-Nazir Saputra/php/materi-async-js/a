@@ -1,0 +1,7 @@
+{
+    User::create()
+
+    // Notifikasi email - verifikasi
+
+    return redirect('/home');
+}

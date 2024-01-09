@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let number = 7
+
+        var text1 = 'Single quotes'
+        let text2 = "Double quotes" 
+        // bisa menambahkan fungsi didalamnya (hak yang bersifat dinamis)
+        const text3 = `BackTicks`
+
+        let boolean = true
+
+        console.log(number)
+        console.log(text1)
+        console.log(text2)
+        console.log(text3)
+        console.log(boolean)
+        
+        // tipe data null 
+        let emptyValue = null
+        console.log(emptyValue)
+        
+        //tipe data undefined
+        let nilaiBelumDiisi
+        console.log(nilaiBelumDiisi)
+
+        // tipe data symbol
+        let uniqueSymbol = Symbol('deskripsi-simbol')
+        console.log(uniqueSymbol)
+        
+        //tipe data array 
+        let array = ['eiar', 'eugene', 'ryo']
+        console.log(array[2])
+
+        // tipe data function 
+        function add(a,b){
+            console.log(a+b)
+        }
+
+        // tipe data object
+        let witch = {
+            name: "Ryo",
+            age: 17,
+            house: "Slytherin"
+        }
+        console.log(witch.house)
+
+        // OPERATOR 
+        let num1 = 7
+        let num2 = 3 
+        
+        console.log(num1+num2)
+        console.log(num1-num2)
+        console.log(num1*num2)
+        console.log(num1/num2)
+        console.log(num1%num2)
+
+        //operator perbandingan
+        console.log(num1==num2)
+        console.log(num1!=num2)
+        console.log(num1>=num2)
+        console.log(num1<=num2)
+        console.log(num1>num2)
+        console.log(num1<num2)
+
+        //operator logika 
+        console.log(num1 != num2 && num1 > num2)
+        console.log(num1 == num2 || num1 != num2)
+
+        // operator penugasan 
+        num1 = num1 + num2
+        console.log(num1)
+        num1 += num2 //shortcut
+        console.log(num1)
+
+        //operator null checking
+        let object = null
+        let checkObject = object?.name
+        console.log(checkObject)
+
+        // operator kondisional 
+        let checkAge = (witch.age >= 18) ? "Adult" : "Underage"
+        console.log(checkAge)
+
+        // if statement
+        if(witch.age >= 18){
+            console.log("Adult")
+        }
+        else if(witch.age >= 13){
+            console.log("Teenagers")
+        }
+        else{
+            console.log("Child")
+        }
+
+        // switch statement
+        switch(witch.house){
+            case "Gryffindor":
+                console.log("You're a very BRAVE Wizard")
+                break;
+            case "Slytherin":
+                console.log("You're a very CUNNING Wizard")
+                break;
+            case "Ravenclaw":
+                console.log("You're a very SMART Wizard")
+                break;
+            case "Hufflepuff":
+                console.log("You're a very SWEET Wizard")
+                break;
+            default:
+                console.log("You're a MUGGLE, lolz")
+        }
+    </script>
+</body>
+</html>

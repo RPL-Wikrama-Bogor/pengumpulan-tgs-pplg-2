@@ -2,6 +2,11 @@
 
 $listmenu = [
     [
+        "menu" => "Nasi Goreng",
+        "harga" => 15000,
+        "tipe" => "Makanan"
+    ],
+    [
         "menu" => "Mie Goreng",
         "harga" => 10000,
         "tipe" => "Makanan"
@@ -33,10 +38,28 @@ $listmenu = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waroeng Online</title>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
         body {
             font-weight: bold;
-            background-image: linear-gradient(45deg, yellow, orange);
+            background-image: linear-gradient(45deg, yellow, yellow, orange, orange);
             background-size: 400% 400%;
+            animation: background 5s ease-in-out infinite;
+        }
+
+        @keyframes background{
+            0%{
+                background-position: 0 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0 50%;
+            }
+
         }
 
         .card {
@@ -66,6 +89,10 @@ $listmenu = [
             font-family: arial;
             border-radius: 20px;
             display: flex;
+        }
+
+        select, input{
+            border-radius: 20px;
         }
 
         .pilmenu {
@@ -116,11 +143,12 @@ $listmenu = [
 
     <div class="card2">
         <form action="" method="post">
+            <h4 style="font-style: italic; font-size: 15px;">Jika anda membeli lebih dari Rp. 50.000,00 anda dapat diskon 10%</h4>
             <div class="pilmenu">
                 <tr>
                     <td>Pilih Makanan : </td>
                     <td>
-                        <select name="makanan" >
+                        <select name="makanan" required>
                             <option hidden disabled selected>==> Pilih <==</option>
                                     <?php
                                     foreach ($listmenu as $key => $menumakan) {
@@ -135,14 +163,14 @@ $listmenu = [
 
             <div class="pilmenu">
                 <label for="jumlahmakan">Jumlah pembelian makanan : </label>
-                <input type="number" name="jumlahmakan" id="jumlahmakan">
+                <input type="number" name="jumlahmakan" id="jumlahmakan" required>
             </div>
 
             <div class="pilmenu">
                 <tr>
                     <td>Pilih Minuman : </td>
                     <td>
-                        <select name="minuman">
+                        <select name="minuman" required>
                             <option hidden disabled selected>==> Pilih <== </option>
                                     <?php
                                     foreach ($listmenu as $key => $menuminum) {
@@ -157,7 +185,7 @@ $listmenu = [
 
             <div class="pilmenu">
                 <label for="jumlahmakan">Jumlah pembelian minuman : </label>
-                <input type="number" name="jumlahminum" id="jumlahminum">
+                <input type="number" name="jumlahminum" id="jumlahminum" required>
             </div>
 
             <tr>
@@ -167,7 +195,7 @@ $listmenu = [
         </form>
     </div>
 
-    <div class="content">
+    <div class="content" id="bayar">
         <?php
         if (isset($_POST["simpan"])) {
 
@@ -184,13 +212,21 @@ $listmenu = [
             $jumlahmakan = $_POST['jumlahmakan'];
             $jumlahminum = $_POST['jumlahminum'];
             $total = $hargamakan * $jumlahmakan + $hargaminum * $jumlahminum;
+            if ($total >= 50000) {
+                $diskon = $total * (10 / 100);
+            }else{
+                $diskon = 0;
+            }
 
             echo "Makanan : " . $makanan . " (" . $jumlahmakan . ")<br>";
             echo "Harga Makanan : " . $hargamakan . "<br>";
             echo "Minuman : " . $minuman . " (" . $jumlahminum . ")<br>";
-            echo "Minuman : " . $hargaminum . "<br>";
-            echo "Diskon Harian : 0 <br>";
-            echo "Total Harga : " . $total;
+            echo "Minuman : " . $hargaminum . "<br>-------------------------------------<br>";
+            echo "Total Harga : " . $total."<br>";
+            echo "Diskon :".$diskon."<br>";
+            if ($diskon > 0){
+            echo "Total setelah diskon : ". $total - $diskon;
+            }
             echo '</div>';
         }
 

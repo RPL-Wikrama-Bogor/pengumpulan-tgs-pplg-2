@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal</title>
+</head>
+<body>
+
+    <!-- buatlah sebuah fungsi javascript yang menggunakan filter untuk mengembalikan/menampilkan daftar buku dengan genre "fiction" -->
+    <script>
+        const books = [
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: "J.K. Rowling",
+            genre: "Fantasy",
+            year: 1997
+        },
+        {
+            title: "To kill a Mockingbird",
+            author: "Harper Lee",
+            genre: "Fiction",
+            year: 1960
+        },
+        {
+            title: "The great Gatsby",
+            author: "F. Scott Fitzgerald",
+            genre: "Fantasy",
+            year: 1925
+        }
+        ];
+
+
+        // const fictionBooks = books.filter(book => book.genre === "Fiction")
+        // .map(book => book.title);
+
+        // console.log(fictionBooks);
+
+        let fictionBook = books.filter((books) => books.genre === "fiction")
+        fictionBook.forEach((fictionBook) => console.log(fiction.title))
+
+        // Buatlah sebuah fungsi Javascript yang menggunakan map untuk mengembalikan daftar barang dengan harga diskon 10%
+
+        //SOAL 2    
+        const product = [
+        {
+            name: "Laptop",
+            price: 1000
+        },
+        {
+            name: "SmartPhone",
+            price: 500
+        },
+        {
+            name: "Tablet",
+            price: 300
+        }
+        ];
+
+
+        const discountedProducts = product.map(product => ({ name: product.name, price: product.price * 0.9 }));
+        discountedProducts.forEach(product => { console.log(`${product.name} seharga ${product.price}`); });
+
+        // soal 3
+        const newProduct = [
+        {
+            name: "Kulkas",
+            price: 200
+        },
+        {
+            name: "TV",
+            price: 300
+        }
+        ];
+
+        const AverageProducts = newProduct.map(newProduct => ({ name: newProduct.name, price: newProduct.price / 5}));
+        AverageProducts.forEach(newProduct => { console.log(`${newProduct.name} seharga ${newProduct.price}`); });
+    </script>
+</body>
+</html>

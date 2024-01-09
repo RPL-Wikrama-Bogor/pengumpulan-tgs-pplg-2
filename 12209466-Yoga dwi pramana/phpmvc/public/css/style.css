@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jumbotron {
+    background-color: #f3f1f1 !important;
+}
+
+
+.badge-danger {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+}
+
+/* CSS untuk badge "Sudah Kembali" */
+.badge-success {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+}

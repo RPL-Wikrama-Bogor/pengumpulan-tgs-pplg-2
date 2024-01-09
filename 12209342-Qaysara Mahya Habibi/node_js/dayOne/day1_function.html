@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let varName = "Ryo"
+        function printText(name){
+            console.log("Hello Wizards! " +name)
+        }
+        printText(varName)
+        
+        let printText2 = (name) => {
+            console.log("Hello Wizards! " +name)
+        }
+        printText2(varName)
+        
+        //penggunaan default value
+        let printHello = function printText(name = "visitor"){
+            console.log("Hello Wizards! " +name)
+        }
+        printHello()
+
+        // mengatasi variable yang tidak terdefinisikan
+        let price = 5000
+        let margin
+        let hargaJual1 = price + (margin || 500) //mengisi nilai default
+        let hargaJual2 = price + (margin ?? 500) // mengisi nilai default nullish coalescing operator
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        //transformasi array
+        //map = membuat array baru dengan elemen yang dihasilkan dari transformasi elemen yang asli
+        let originArray = [1,2,3,4,5]
+        let newArray = originArray.map((originArray) => originArray * 2)
+        console.log(newArray)
+        
+        // filter = membuat array baru yang hanya berisi elemnt yg memenuhi syarat
+        let ganjil = originArray.filter((originArray) => originArray % 2 == 1)
+        console.log(ganjil)
+        let genap = originArray.filter((originArray) => originArray % 2 == 0)
+        console.log(genap)
+
+        let number1 = 1
+        let text1 = "1"
+        console.log(number1 == text1) // hanya melihat isinya meskipun tipe datanya berbeda
+        console.log(number1 === text1) // mengecek tipe datanya juga  
+        
+        // reduce
+         // let sumNum = originArray.reduce((accumulator, currentValue) = accumulator + currentValue)
+         // console.log(sumNum)
+
+         // foreach -> menjalankan program tanpa mengubah data sebelumnya
+         let buah = ['Apel', 'Mangga', 'Jeruk']
+         buah.forEach((buah) => console.log(buah))
+
+         // sort -> mengurutkan 
+         let huruf = ['c', 'd', 'a']
+         huruf.sort()
+         console.log(huruf)
+
+         //find -> mencari nilai
+        let result = huruf.find
+
+    </script>
+</body>
+</html>

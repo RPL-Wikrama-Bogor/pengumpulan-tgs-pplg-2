@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = [
+    {
+        title: "Harry Potter and the Sorcerer's Stone",
+        author: "J.K. Rowling",
+        genre: "Fantasy",
+        year: 1997
+    },
+    {
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        genre: "fiction",
+        year: 1960
+    },
+    {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        genre: "fiction",
+        year: 1925
+    }
+];
+
+// 1.function filterBooks(books, genre) {
+//     return books.filter(book => book.genre === genre);
+// }
+
+// const fictionBooks = filterBooks(books, "fiction");
+
+// fictionBooks.forEach(book => {
+//     console.log(book.title);
+// });
+
+let fictionBook = books.filter((books) => books.genre === "fiction")
+fictionBook.forEach((fictionBook) => console.log(fictionBook.title))
+
+console.log("-----------------------")
+//Buatlah sebuah fungsi JavaScript yang menggunakan map untuk mengembalikan daftar barang dengan harga diskon 10%
+const products = [
+    {
+        name: "Laptop",
+        price: 1000,
+    },
+    {
+        name: "Smartphone",
+        price: 500,
+    },
+    {
+        name: "Tablet",
+        price: 300
+    },
+];
+
+// const Discount = products => products.map(product => ({ product, price: product.price * 0.9 }));
+// const DiskonProduk = Discount(products);
+// DiskonProduk.forEach(product => console.log(product.name + " seharga $" + product.price));
+let hargaDiskon = products.map((product) => product.price * 0.9)
+console.log(hargaDiskon)
+let x = 0
+hargaDiskon = products.filter((products) => products.price = hargaDiskon[x--])
+hargaDiskon.forEach((products) => console.log(`${products.name} seharga $ ${(hargaDiskon.price)}`));
+console.log("------------------")
+
+//Buatlah sebuah fungsi java script untuk menyatukan array product dan newProduct lalu tampilkan rata ratanya
+let product = [
+    {
+        name: "Laptop",
+        price: 1000,
+    },
+    {
+        name: "Smartphone",
+        price: 500,
+    },
+    {
+        name: "Tablet",
+        price: 300
+    },
+];
+
+const newProduct = [
+    {
+        name: "kulkas",
+        price: 200
+    },
+    {
+        name: "IV",
+        price: 300
+    }
+];
+
+let combinedArray = [...product, ...newProduct];
+let averagePrice = combinedArray.reduce((total, item) => total + item.price, 0) / combinedArray.length;
+
+console.log("Rata-rata harga: " + averagePrice);
+
+    </script>
+</body>
+</html>

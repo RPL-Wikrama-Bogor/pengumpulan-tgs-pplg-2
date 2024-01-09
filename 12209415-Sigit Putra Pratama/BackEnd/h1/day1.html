@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let number = 10;
+
+      var text1 = "Ronaldo Ga bisa apa-apa";
+      let text2 = 'Messi Real GOAT';
+      const text3 = `P info Pildun + info Laureus = ${text1}`;
+
+      let boolean = true;
+      let TidakAdaNilai = null
+      let Undefined
+      let angka = [1, 2, 3, 4, 5]
+      
+      let array = ['apel', 'semangka', 'durian']
+      let simbol = Symbol('descripsi-simbol')
+
+      console.log(number);
+      console.log(text1);
+      console.log(text2);
+      console.log(text3);
+      console.log(boolean);
+      console.log(TidakAdaNilai)
+      console.log(angka)
+      console.log(Undefined)
+      console.log(simbol)
+      console.log(array)
+      function tambah(a,b) {
+        console.log(a+b)
+      }
+
+      let siswa = {
+        nama: "Gitt",
+        usia: 16,
+        asal: "Google"
+      }
+      console.log(siswa)
+
+      let number1 = 10
+      let number2 = 4
+
+      console.log(number1 + number2)
+      console.log(number1 - number2)
+      console.log(number1 * number2)
+      console.log(number1 / number2)
+      console.log(number1 % number2)
+
+      let hasil = 5 == 5
+      console.log(hasil)
+      let hasil2 = 5 != 5
+      console.log(hasil2)
+      let hasil3 = 5 > 5
+      console.log(hasil3)
+      let hasil4 = 5 < 5
+      console.log(hasil4)
+      let hasil5 = 5 >= 5
+      console.log(hasil5)
+      let hasil6 = 5 <= 5
+      console.log(hasil6)
+      
+      console.log(number1 != number2 && number1 > number2)
+      console.log(number1 == number2 || number1 != number2)
+
+      number1 = number1 + number2
+      number1 += number2
+      console.log(number1)
+
+      let object = null
+
+      let cekObject = object?.nama
+      console.log(cekObject)
+
+      let cekUmur = (siswa.usia >= 18) ? "Dewasa" : "Remaja Jompo"
+      console.log(cekUmur)
+
+      if(siswa.usia >= 18){
+        console.log("Dewasa")
+      } else if(siswa.usia >= 9){
+        console.log("Remaja")
+      } else {
+        console.log("Pemula")
+      }
+
+      switch (siswa.asal){
+        case "Google":
+        console.log("Perusahaan")
+        break;
+        case "SMK Wikrama":
+          console.log("Sekolah")
+          break;
+          default:
+          console.log("Umum")
+      }
+      </script>
+  </body>
+</html>
