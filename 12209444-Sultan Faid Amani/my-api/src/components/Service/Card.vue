@@ -1,0 +1,60 @@
+<template>
+    <div class="card-services">
+        <img :src="layanan.file" :alt="layanan.title">
+
+        <h4>{{ layanan.title }}</h4>
+        <p>
+            {{ layanan.description }}
+        </p>
+    </div>
+</template>
+
+<script>
+
+    export default{
+
+        props: ['layanan'],
+
+    }
+
+</script>
+
+
+<style scoped >
+
+    .card-services{
+
+        text-align: start;
+        min-height: 306px;
+        padding: 30px 30px 0 30px;
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+        border-radius: 60px 0 0 0 ;
+        background-color: #fff;
+        transition: all 0.5s ease;
+        margin: 10px 10px;
+
+    }
+
+
+    .card-services img{
+        width: 100px;
+    }
+
+
+    .card-services h4 {
+
+        font-size: 18px;
+        line-height: 30px;
+        color: #343b4e;
+
+    }
+
+    .card-services p {
+
+        font-weight: 400;
+        color: #827f8d;
+        margin: 0 0 10px 0;
+
+    }
+
+</style>
