@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let angka = [1, 2, 3, 4, 5]
+        angka.splice(2, 1)
+        //splice bisa untuk menambahkan, mengubah dan mengapus
+        console.log(angka)
+        //splice jika mengubah atau menghapus arraynya masih yang itu
+
+        let buah = ["apple", "banana", "watermelon"]
+        buah.forEach((buah) => console.log(buah))
+
+        let huruf = ['c', 'g', 'y', 'r', 'p']
+        huruf.sort()
+        console.log(huruf)
+
+        let hasil = huruf.find((hasil) => hasil === 'y')
+        console.log(hasil)
+
+        const _fruits = new Array('apple', 'orange', 'banana')
+        console.log(_fruits)
+       // menambah dan menghapus element dalam array
+          _fruits.push("watermelon"); // mengubah "watermelon" ke akhir array
+         console.log(_fruits);
+         _fruits.pop(); // menghapus element terakhir pada arrray
+         console.log(_fruits);
+         _fruits.shift(); // menghapus element pertama pada array
+         console.log(_fruits);
+
+      // menghitung jumlah panjang array
+      console.log(_fruits.length);
+
+      // mengembalikan nilai index element
+      console.log(_fruits.indexOf("banana"));
+      console.log(_fruits.indexOf("orange")); //jika tidak ditemukan akan bernilai -1
+
+      const _numbers = new Array(0, 1, 2, 3, 4,)
+      //membuat salinan potongan array
+      const _newNumbers = _numbers.slice(2,4)
+      console.log(_newNumbers)
+
+      //menggabungkan 2 array
+      const _fruits2 = ['durian', 'rambutan']
+      const _mergedFruits = _fruits.concat(_fruits2)
+      console.log(_mergedFruits)
+
+      //deklarasi object
+      let _person = {
+        name: "Yazid Wiliadi",
+        age: 24,
+        isMarried: false
+      }
+
+      //akses property
+      console.log(_person.name)
+      console.log(_person['age'])
+
+      //menghapus property object
+      console.log('Sebelum menghapus: ')
+      console.log(_person)
+      delete _person.isMarried
+
+      console.log('Setelah menghapus: ')
+      console.log(_person)
+
+      //property shorthand
+      const _jenis = 'persegi'
+      const _panjang = 25
+      const _lebar = 25
+
+      const _bangunDatar = {_jenis, _panjang, _lebar}
+      console.log(_bangunDatar)
+
+      //property existence, memeriksa property dalam object
+      let _student = {
+        name: "Kuma Rimai",
+        age: 18,
+        className: 'RPL'
+      }
+
+      console.log("name" in _student)
+      console.log("genre" in _student)
+      console.log(_student.hasOwnProperty("name"))
+      console.log(_student.hasOwnProperty("genre"))
+    </script>
+  </body>
+</html>
+    </script>
+</body>
+</html>

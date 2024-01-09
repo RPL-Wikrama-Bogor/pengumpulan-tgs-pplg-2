@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal</title>
+</head>
+<body>
+    <script>
+        // SOAL 1
+        const books = [
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: "J.K. Rowling",
+            genre: "Fantasy",
+            year: 1997
+        },
+        {
+            title: "To kill a Mockingbird",
+            author: "Harper Lee",
+            genre: "Fiction",
+            year: 1960
+        },
+        {
+            title: "The great Gatsby",
+            author: "F. Scott Fitzgerald",
+            genre: "Fiction",
+            year: 1925
+        }
+        ]
+
+        //map berguna untuk mengelompokkan
+        //versi yajid
+        const bukufiksi = books.filter(book => book.genre === "Fiction").map(book => book.title)
+        console.log(bukufiksi)
+
+        //versi si kakak
+        let fictionBook = books.filter((books) => books.genre === "Fiction")
+        fictionBook.forEach((fictionBook) => console.log(fictionBook.title))
+
+        //SOAL 2    
+        const products = [
+        {
+            name: "Laptop",
+            price: 1000
+        },
+        {
+            name: "SmartPhone",
+            price: 500
+        },
+        {
+            name: "Tablet",
+            price: 300
+        }
+        ]
+        
+        const harga = products.map(product => ({ name: product.name, price: product.price * 0.9 }));
+        harga.forEach(product => { console.log(`${product.name} seharga $${product.price}`); }); 
+
+        // SOAL 3 
+        const newProduct = [
+        {
+            name: "Kulkas",
+            price: 200
+        },
+        {
+            name: "TV",
+            price: 300
+        }
+        ]   
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+
+    <script>
+        //const gabisa diubah
+        //let digunakan untuk block itu saja, sedangkan var cakupannya global, dan kedua ini bisa diubah
+        //var jarang digunakan
+
+        //Cakupan global adalah cakupan yang paling luas. Variabel yang dideklarasikan dalam cakupan global dapat diakses dari mana saja dalam program, termasuk dari dalam fungsi.
+
+        //Cakupan block adalah cakupan yang lebih sempit. Variabel yang dideklarasikan dalam cakupan block hanya dapat diakses dari dalam blok di mana variabel tersebut dideklarasikan.
+
+        // '' didalamnya bisa dipanggil "" begitu juga sebaliknya
+        // `` didalamnya bisa manggil function 
+
+        //5
+        let numbers = 10
+        var text = 'Messi GOAT'
+        let text2 = "Untanaldo"
+        const text3 = `value dari number = ${numbers}`
+
+        let boolean = true
+
+        console.log(numbers)
+        console.log(text)
+        console.log(text2)
+        console.log(text3)
+        console.log(boolean)
+
+        let nilaiBelumDiisi
+        let tidakAdaNilai = null
+        let angka = [1, 2, 3, 4, 5]
+        let array = ['apple', 'orange', 'watermelon']
+        console.log(tidakAdaNilai)
+        console.log(angka)
+        console.log(nilaiBelumDiisi)
+        console.log(array)
+
+        function tambah(a,b) {
+            console.log(a+b)
+        }
+
+        let siswa = {
+            nama: "@vlykz_",
+            usia: 17,
+            asal: "Padang"
+        }
+        console.log(siswa.nama)
+
+        let number1 = 9
+        let number2 = 2
+
+        console.log(number1 % number2)
+        console.log(number1 + number2)
+        console.log(number1 - number2)
+        console.log(number1 * number2)
+        console.log(number1 / number2)
+        
+        console.log(number1 == number2)
+        console.log(number1 != number2)
+        console.log(number1 > number2)
+        console.log(number1 < number2)
+        console.log(number1 >= number2)
+        console.log(number1 <= number2)
+
+        console.log(number1 != number2 && number1 > number2)
+        console.log(number1 == number2 || number1 != number2)
+
+        let number3 = number1 * number2
+        console.log(number3)
+
+        let objek = null
+        let nilai = objek?.properti
+
+        console.log(nilai)
+
+        let cekUmur = (siswa.usia >= 18) ? "Dewasa" : "Bocil"
+        console.log(cekUmur)
+
+        if(siswa.usia >=18) {
+            console.log("Dewasa")
+        } else if (siswa.usia >= 9){
+            console.log("Remaja")
+        } else {
+            console.log("Bocil")
+        }
+
+        switch (siswa.asal) {
+            case "Padang":
+                console.log("Daerah")
+                 break;
+            case "SMK Wikrama":
+                console.log("Sekolah")
+                break;
+            default:
+            console.log("Umum")
+        }
+    </script>
+</body>
+</html>
