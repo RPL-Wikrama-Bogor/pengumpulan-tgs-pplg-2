@@ -1,0 +1,118 @@
+<<<<<<< HEAD
+<?php
+$arrAngka = [];
+$nilaiTerbesar;
+$nilaiTerkecil;
+$rataRata;
+?>
+<!--input-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dikit Ga Ngaruh</title>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="wrap">
+            <div style="display: flex;">
+            <label for="angka">Masukan Angka : </label>
+            <!-- name dengan tanda [] berarti bahwa semua input dengan name yang sama,
+            valuenya akan diambil semua dan disimpan dalam bentuk array-->
+            <input type="number" name="angka[]" id="angka">
+            </div>
+        </div>
+        <p style="cursor: pointer; color: blue" onclick="tambahInput()">Tambah Input Form</p>
+        <button type="submit" name="submit">Kirim</button>
+    </form>
+    <script>
+        let jumlahInput = 1;
+        function tambahInput() {
+            let inputElement= `
+            <div style="display: flex;">
+                <label for="angka">Masukan Angka : </label>
+                <input type="number" name="angka[]" id="angka">
+            </div>
+            `;
+            //jumlah input di increment
+            jumlahInput += 1;
+            // document : pengambil alihan baris kode html
+            if (jumlahInput < 10) {
+                document.getElementById('wrap').innerHTML += inputElement;
+            }
+        }
+    </script>
+    <!--proses-->
+<?php
+    if (isset($_POST['submit'])) {
+    //mengisi arrangka dengan seluruh value dari input yang memliki name angka
+    $arrAngka = $_POST['angka'];
+    $nilaiTerbesar = max($arrAngka);
+    $nilaiTerkecil = min($arrAngka);
+    //array_sum : seluruh item dijumlahkan, count : menmghitung jumlah item yang terdapat pada array
+    $rataRata = array_sum($arrAngka) / count($arrAngka);
+    echo "nilai terbesar : " . $nilaiTerbesar . "<br> nilai terkecil : " . $nilaiTerkecil . "<br> rata-rata : " . $rataRata;
+}
+?>
+</body>
+=======
+<?php
+$arrAngka = [];
+$nilaiTerbesar;
+$nilaiTerkecil;
+$rataRata;
+?>
+<!--input-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dikit Ga Ngaruh</title>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="wrap">
+            <div style="display: flex;">
+            <label for="angka">Masukan Angka : </label>
+            <!-- name dengan tanda [] berarti bahwa semua input dengan name yang sama,
+            valuenya akan diambil semua dan disimpan dalam bentuk array-->
+            <input type="number" name="angka[]" id="angka">
+            </div>
+        </div>
+        <p style="cursor: pointer; color: blue" onclick="tambahInput()">Tambah Input Form</p>
+        <button type="submit" name="submit">Kirim</button>
+    </form>
+    <script>
+        let jumlahInput = 1;
+        function tambahInput() {
+            let inputElement= `
+            <div style="display: flex;">
+                <label for="angka">Masukan Angka : </label>
+                <input type="number" name="angka[]" id="angka">
+            </div>
+            `;
+            //jumlah input di increment
+            jumlahInput += 1;
+            // document : pengambil alihan baris kode html
+            if (jumlahInput < 10) {
+                document.getElementById('wrap').innerHTML += inputElement;
+            }
+        }
+    </script>
+    <!--proses-->
+<?php
+    if (isset($_POST['submit'])) {
+    //mengisi arrangka dengan seluruh value dari input yang memliki name angka
+    $arrAngka = $_POST['angka'];
+    $nilaiTerbesar = max($arrAngka);
+    $nilaiTerkecil = min($arrAngka);
+    //array_sum : seluruh item dijumlahkan, count : menmghitung jumlah item yang terdapat pada array
+    $rataRata = array_sum($arrAngka) / count($arrAngka);
+    echo "nilai terbesar : " . $nilaiTerbesar . "<br> nilai terkecil : " . $nilaiTerkecil . "<br> rata-rata : " . $rataRata;
+}
+?>
+</body>
+>>>>>>> 8ea81f78c3b089b87a85e1ca4c2c0162912ea2fa
+</html>
