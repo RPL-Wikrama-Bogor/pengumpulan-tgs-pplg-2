@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // menampilkan sebuah fungsi javaScript yang menggunakan filter untuk mengembalikan /menampilkan 
+        // daftar buku dengan genre "fiction" 
+
+        const books = [
+            {
+                title: "harrys potter and the sorcerer's stone",
+                author: "J.K Rowling",
+                genre: "fantasy",
+                year: 1997
+            },
+            {
+                title: "bumi",
+                author: "tere liye",
+                genre: "fiction",
+                year: 1960
+            },
+            {
+                title: "to kill a manuk",
+                author: "JK huna Laguna",
+                genre: "fiction",
+                year: 1925
+            },
+        ];
+
+        let bukuFiksi = books.filter((books) => books.genre === "fiction");
+        bukuFiksi.forEach((bukuFiksi) => console.log(bukuFiksi.title));
+
+        // let hasil= books.filter((books) => books.genre === "fiction");
+        // console.log(hasil)
+
+        // let genreBuku= books.filter((books) => books.genre === "fiction");
+        // let judulBuku = genreBuku.map((genreBuku) => genreBuku.title);
+        // console.log(judulBuku);
+
+        // buatlah fungsi sebuah javascript menggunakan map untuk mengembalikan 
+        // daftar barang dengan harga diskon 10%
+
+        const products = [
+            {
+            name: "laptop",
+            price: 1000,
+            },
+            {
+            name: "smartphone",
+            price: 500,
+            },
+            {
+            name: "tablet",
+            price: 300,
+            }
+        ];
+
+        let hargaDiskon = products.map((products) => products.price * 0.9)
+        let x = 0
+        hargaDiskon = products.filter((products) => products.price = hargaDiskon[x++]);
+        hargaDiskon.forEach((hargaDiskon) => console.log(`ini adalah ${hargaDiskon.name} dan harganya ${hargaDiskon.price}`));
+
+        // buatlah sebuah fungsi javascript untuk menyatukan
+        // array products dan new products, lalu tampilkan rata-rata harganya
+
+        const newProducts = [
+            {
+                nama:"kulkas",
+                price: 200
+            },
+            {
+                name:"tv",
+                price: 300
+            }
+        ];
+
+        const _mergedProducts = products.concat(newProducts);
+        console.log(_mergedProducts);
+
+    </script>
+</body>
+</html>

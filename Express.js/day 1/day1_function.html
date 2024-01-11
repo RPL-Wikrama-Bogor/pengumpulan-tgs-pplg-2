@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 part 2</title>
+</head>
+<body>
+    <script>
+        let varAsal = "Wikarama"
+        let varUmur = 17
+        let varNama = "Gemoy"
+        function printText(nama, umur, asal){
+            console.log("Hello Word Nama Saya " + nama + " " + umur + " " + asal)
+        }
+        printText(varNama, varUmur, varAsal)
+        
+        //--------------------------------------------------------------
+
+        let printText2 = (nama) =>{
+            console.log("hello word nama saya " + nama)
+        }
+        printText2(varNama)
+
+        //--------------------------------------------------------------
+
+        printHello = function printText(nama, umur, asal){
+            console.log("Hello Word Nama Saya " + nama + " " + umur + " " + asal)
+        }
+        printHello(varNama, varUmur, varAsal)
+
+        //--------------------------------------------------------------
+
+
+        printHello = function printText(nama = "tamu"){
+            console.log("Hello Word Nama Saya " + nama)
+        }
+        printHello()
+
+        //------------------------------------------------------------
+
+        let harga = 1000
+        let margin
+        let hargaJual1 = harga + (margin || 500)
+        let hargaJual2 = harga + (margin ?? 500)
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        //------------------------------------------------------------
+
+        let angka = [1, 2, 3, 4, 5]
+        let angkaBaru = angka.map((angka) => angka *2)
+        console.log(angkaBaru)
+
+        //-------------------------------------------------------------
+
+        let angkaGanjil = angka.filter((angka) => angka % 2 === 1)
+        console.log(angkaGanjil)
+
+        //---------------------------------------------------------------
+
+        let number1 = 1
+        let text1 = "1"
+        console.log(number1 == text1)
+        console.log(number1 === text1)
+
+        //--------------------------------------------------------------
+
+        let sumAngka = angka.reduce((acumulator, currentValue) => acumulator + currentValue, 0)
+        console.log(sumAngka)
+
+        //--------------------------------------------------------------
+
+        let buah = ['apple', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        //---------------------------------------------------------------
+
+        let huruf = ['c', 'b', 'a', 'z']
+        huruf.sort()
+        console.log(huruf)
+
+        //-----------------------------------------------------------------
+        
+        let hasil = huruf.find((hasil) => hasil === 'z')
+        console.log(hasil) 
+
+        //----------------------------------------------------------------
+
+        const _fruits = new  Array('apel', 'pisang', 'semangka')
+        console.log(_fruits)
+
+        _fruits.push("jeruk")//menambah jeruk di akhir aray
+        console.log(_fruits)
+
+        _fruits.pop()// menghapus elemen terakhir pada array
+        console.log(_fruits)
+
+        _fruits.shift()// menghapus eleman pertama pada array
+        console.log(_fruits)
+
+        _fruits.splice(1,0, "melon")
+        console.log(_fruits)
+
+
+        console.log(_fruits.length)//menghitung jumlah panjang array 
+
+        //mengembalikan nilai index element
+        console.log(_fruits.indexOf('pisang'))
+        console.log(_fruits.indexOf('semangka'))
+
+        const _numbers = new Array(0,1,2,3,4)
+        // membuat salinan potoangan aray
+        const _newNumbers = _numbers.slice(2,4)
+        console.log(_newNumbers)
+
+        //menambahkan aray
+        const _fruits2 = ['lengkeng', 'melon']
+        const _mergedFruits = _fruits.concat(_fruits2)      
+        console.log(_mergedFruits)
+
+        //--------------------------------------------------------
+
+        let _person = {
+            name: "Gemoy",
+            age: 30,
+            isMaried: false
+        }
+
+        console.log(_person.name)
+        console.log(_person["age"])
+
+        console.log('semelum menghapus : ')
+        console.log(_person)
+        delete _person.isMaried
+        console.log('setelah menghapus: ')
+        console.log(_person)
+
+        const _jenis = 'persegi'
+        const _panjang = 30
+        const _lebar = 30
+
+        const _bangunDatar = {_jenis, _panjang, _lebar}
+        console.log(_bangunDatar)
+
+        let _student = {
+            name: "gemoy",
+            age: 30,
+            className: 'RPL'
+        }
+
+        console.log("name" in _student)
+        console.log("genre" in _student)
+        console.log(_student.hasOwnProperty("name"))
+        console.log(_student.hasOwnProperty("genreP"))
+
+    </script>
+</body>
+</html>

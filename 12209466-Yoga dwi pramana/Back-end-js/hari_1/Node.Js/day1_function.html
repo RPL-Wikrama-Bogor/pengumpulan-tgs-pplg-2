@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function
+        let varNama = "Yoga"
+        function printText(nama){
+            console.log("Hello World! Nama Saya " +nama)
+        }
+        printText(varNama)
+
+        // Arrow function
+        let printText2 = (nama) => {
+            console.log("Hello World! Nama Saya " +nama)
+        }
+        printText2(varNama)
+
+        //firts-class = fucntion (function yg dimasukan ka variable)
+        let printHello = function printText(nama){
+            console.log("Hello World! Nama Saya " +nama)
+        }
+        printHello(varNama)
+
+        //function default
+        let printHelloo = function printText(nama = pengunjung){
+            console.log("Hello World! Nama Saya " +nama)
+        }
+        printHello(varNama)
+
+
+        //
+        let harga = 1000
+        let margin
+
+        let hargaJual1 = harga + (margin || 500)
+        let hargaJual2 = harga + (margin ?? 500)
+        console.log(hargaJual1);
+        console.log(hargaJual2);
+
+
+        // Array map
+        let angka = [1, 2, 3, 4, 5]
+        let angkaBaru = angka.map((angka) => angka *2)
+        console.log(angkaBaru)
+
+        // Filter
+        let angkaGanjil = angka.filter((angka) => angka % 2 === 1)
+        console.log(angkaGanjil)
+
+        // == perbedaan ===
+        let number1 = 1
+        let text1 = "1"
+
+        console.log(number1 == text1)//mengecek nilai doang
+        console.log(number1 === text1)// mengecek nilai dan tipe data
+
+        //
+        let sumAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log(sumAngka);
+
+        //forEach 
+        let buah =['apple', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        // Sort
+        let huruf = ['c', 'b', 'a', 'd']
+        huruf.sort()
+        console.log(huruf)
+
+        // find
+        let hasil = huruf.find((hasil) => hasil === '2')
+        console.log(hasil)
+    </script>
+</body>
+</html>

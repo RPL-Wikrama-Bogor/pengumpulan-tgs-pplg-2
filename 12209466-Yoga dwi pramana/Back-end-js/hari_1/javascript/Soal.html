@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //Soal 1
+      const books = [
+        {
+          title: "Harry Potter and the Sorrcerer's Stone",
+          author: "J.K. Rowling",
+          Genre: "Fantasy",
+          year: 1997,
+        },
+        {
+          title: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          Genre: "Fiction",
+          year: 1960,
+        },
+        {
+          title: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          Genre: "Fiction",
+          year: 1925,
+        },
+      ];
+
+      let fictionBooks= books.filter((books) => books.Genre === 'Fiction')
+    
+      fictionBooks.forEach((books) => {
+      console.log(books.title);
+      });
+      console.log('==========================================')
+      //Soal 2
+      const products = [
+      {
+        name: "Laptop",
+        price: 1000
+      },
+      {
+        name: "Smartphone",
+        price: 500,
+      },
+      {
+        name: "Tablet",
+        price: 300,
+      },
+    ];
+    let diskonProduct = products.map((products) => products.price - (products.price * 0.1))
+      let x = 0
+
+      products.forEach((products) => {
+        console.log(`${products.name} seharga $ ${diskonProduct[x++]}`);
+    })
+
+    //Soal 3
+    const newProducts = [
+    {
+        name: "Kulkas",
+        price: 200
+    },
+    {
+        name: "TV",
+        price: 300
+    },
+    ];
+    const Elekronik = products.concat(newProducts)
+    let sumHarga = Elekronik.map((Elekronik) 
+    newProducts.forEach((Elekronik) => {
+
+
+    })
+    
+    </script>
+  </body>
+</html>

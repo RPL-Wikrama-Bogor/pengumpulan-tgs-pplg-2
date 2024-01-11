@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //buatlah sebuah fungsi JS yang menggunakan map untuk mengembalikan daftar barang dengan harga diskon 10%
+        const product = [
+            {
+                name: "Laptop",
+                price: 1000, 
+            },
+            {
+                name: "Smartphone",
+                price: 500,
+            },
+            {
+                name: "Tablet",
+                price: 300,
+            },
+        ];
+        const applyDiscount = (products) => {
+    const discountedProducts = products.map((item) => {
+        return {
+            name: item.name,
+            price: item.price * 0.9, // Mengurangi harga sebesar 10%
+        };
+    });
+
+    return discountedProducts;
+};
+
+const discountedProductList = applyDiscount(product);
+console.log(discountedProductList);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = [
+        {
+            title: "hary potter",
+            author: "j.k Rowling",
+            genre: "fantasy",
+            year: 1997
+        },
+        {
+            title: "to kill a mockingbird",
+            author: "harper lee",
+            genre: "fiction",
+            year: 1960
+        },
+        {
+            title: "the great gatsby",
+            author: "f. scott fitzgerald",
+            genre: "fiction",
+            year: 1925
+        }
+        ];
+        
+        let bukuFiction = books.filter((books) => books.genre === "fiction")
+        bukuFiction.forEach((bukuFiction) => console.log(bukuFiction.title))
+        
+
+        const products = [
+        {
+            name: "Laptop",
+            price: 1000
+        },
+        {
+            name: "SmartPhone",
+            price: 500
+        },
+        {
+            name: "Tablet",
+            price: 300
+        }
+        ];
+
+        const discountedProducts = products.map(product => ({ name: product.name, price: product.price * 0.9 }));
+        discountedProducts.forEach(product => { console.log(`${product.name} seharga $${product.price}`); });
+        
+        const newProducts =[
+        {
+            name: "kulkas",
+            price: 200
+        },
+        {
+            name: "TV",
+            price: 300
+        }];
+
+        const _mergedProduct = products.concat(newProducts)      
+        console.log(_mergedProduct)
+    </script>
+</body>
+</html>
